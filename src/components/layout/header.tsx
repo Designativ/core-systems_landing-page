@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Linkedin } from "lucide-react";
+import { Menu, X, Linkedin, ChevronDown } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/shared/logo";
@@ -11,8 +11,9 @@ import { cn } from "@/lib/utils/cn";
 /**
  * Header component with navigation
  * - Sticky on scroll
+ * - Glassmorphism effect with backdrop blur
  * - Mobile responsive with hamburger menu
- * - Clean, minimal design
+ * - Rounded pill-shaped design
  */
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,88 +32,97 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-terminal-border-light bg-white">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        {/* Logo */}
-        <Logo />
+    <header className="fixed top-4 left-0 right-0 z-50 w-full px-4 md:px-6">
+      {/* Glassmorphism Navbar Container */}
+      <div className="mx-auto max-w-7xl">
+        <div className="relative flex h-14 items-center justify-between rounded-xl border border-white/20 bg-white/80 backdrop-blur-md backdrop-saturate-150 px-6 shadow-lg shadow-black/5 transition-all duration-300">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Logo />
+          </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center space-x-6 md:flex">
-          {NAV_LINKS.map((link) => (
+          {/* Desktop Navigation */}
+          <nav className="hidden items-center space-x-1 md:flex">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="group relative flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-white/50 hover:text-gray-900 cursor-pointer"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* CTA Button */}
+          <div className="hidden items-center gap-3 md:flex">
             <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
+              href="https://www.linkedin.com/in/nataliia-ivanova-profile/"
+              target="_self"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center rounded-lg p-2 text-gray-600 transition-colors hover:bg-white/50 hover:text-gray-900"
+              aria-label="LinkedIn"
             >
-              {link.label}
+              <Linkedin className="h-5 w-5" />
             </a>
-          ))}
-        </nav>
+            <Button
+              asChild
+              className="h-9 rounded-lg bg-terminal-dark-teal-alt px-5 text-sm font-semibold text-terminal-lime shadow-sm transition-all hover:bg-terminal-dark-teal hover:shadow-md"
+            >
+              <a
+                href="#contact"
+                onClick={(e) => handleNavClick(e, "#contact")}
+              >
+                CONTACT
+              </a>
+            </Button>
+          </div>
 
-        {/* CTA Button and LinkedIn */}
-        <div className="hidden items-center gap-4 md:flex">
-          <a
-            href="https://www.linkedin.com/in/nataliia-ivanova-profile/"
-            target="_self"
-            rel="noopener noreferrer"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-            aria-label="LinkedIn"
+          {/* Mobile Menu Button */}
+          <button
+            className="flex items-center justify-center rounded-lg p-2 text-gray-700 transition-colors hover:bg-white/50 md:hidden"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
           >
-            <Linkedin className="h-5 w-5" />
-          </a>
-          <Button asChild>
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, "#contact")}
-            >
-              Get Started
-            </a>
-          </Button>
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
-
-        {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </Button>
       </div>
 
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "border-t md:hidden",
+          "mx-auto mt-2 max-w-7xl rounded-2xl border border-white/20 bg-white/90 backdrop-blur-md backdrop-saturate-150 shadow-lg transition-all duration-300 md:hidden",
           isMenuOpen ? "block" : "hidden"
         )}
       >
-        <nav className="container mx-auto flex flex-col space-y-1 px-4 py-4">
+        <nav className="flex flex-col space-y-1 p-4">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground cursor-pointer"
+              className="rounded-lg px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-white/50 hover:text-gray-900 cursor-pointer"
             >
               {link.label}
             </a>
           ))}
-          <div className="mt-4 flex items-center gap-4">
+          <div className="mt-4 flex items-center gap-3 border-t border-gray-200/50 pt-4">
             <a
               href="https://www.linkedin.com/in/nataliia-ivanova-profile/"
               target="_self"
               rel="noopener noreferrer"
-              className="flex items-center justify-center rounded-md px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              className="flex items-center justify-center rounded-lg p-2 text-gray-600 transition-colors hover:bg-white/50 hover:text-gray-900"
               onClick={() => setIsMenuOpen(false)}
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
             </a>
-            <Button asChild className="flex-1">
+            <Button
+              asChild
+              className="flex-1 h-10 rounded-lg bg-terminal-dark-teal-alt text-sm font-semibold text-terminal-lime shadow-sm transition-all hover:bg-terminal-dark-teal hover:shadow-md"
+            >
               <a
                 href="#contact"
                 onClick={(e) => {
@@ -120,7 +130,7 @@ export function Header() {
                   setIsMenuOpen(false);
                 }}
               >
-                Get Started
+                CONTACT
               </a>
             </Button>
           </div>

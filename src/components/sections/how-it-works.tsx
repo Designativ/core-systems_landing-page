@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Search, FileText, BarChart3, Target, Rocket } from "lucide-react";
+import { Reveal } from "@/components/shared/reveal";
 
 const steps = [
   {
@@ -45,68 +46,73 @@ export function HowItWorks() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="process" className="py-20 md:py-28">
+    <section id="process" className="py-20 md:py-28 reveal fade-up">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl">
           {/* Header */}
-          <div className="mx-auto mb-12 max-w-3xl text-center">
-            <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
-              How It Works
-            </h2>
-            <p className="text-xl leading-relaxed text-terminal-text-secondary">
-              A streamlined process designed to deliver maximum value at every stage
-            </p>
-          </div>
+          <Reveal animation="fade-up">
+            <div className="mx-auto mb-12 max-w-3xl text-center">
+              <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
+                How It Works
+              </h2>
+              <p className="text-xl leading-relaxed text-terminal-text-secondary">
+                A streamlined process designed to deliver maximum value at every stage
+              </p>
+            </div>
+          </Reveal>
 
           {/* Tabs */}
-          <div
-            role="tablist"
-            className="flex flex-wrap gap-2 justify-center"
-          >
-            {steps.map((step, index) => {
-              const Icon = step.icon;
-              const isActive = activeTab === index;
-              return (
-                <button
-                  key={index}
-                  role="tab"
-                  aria-selected={isActive}
-                  onClick={() => setActiveTab(index)}
-                  className={`flex items-center gap-3 rounded-full px-6 py-3 text-base font-semibold transition-all duration-200 shadow-sm ${
-                    isActive
-                      ? "bg-terminal-lime text-black hover:bg-terminal-lime-hover shadow-lg scale-105"
-                      : "bg-terminal-light-gray text-terminal-text-secondary hover:bg-terminal-border-light hover:shadow-md"
-                  }`}
-                >
-                  <Icon className={`h-5 w-5 ${isActive ? "text-black" : "text-terminal-text-secondary"}`} />
-                  <span className="uppercase tracking-wider">{step.title}</span>
-                </button>
-              );
-            })}
+          <div className="relative mb-8 w-full">
+            <div
+              role="tablist"
+              className="relative flex items-center justify-center gap-6 overflow-x-auto pb-2 w-full"
+            >
+              {steps.map((step, index) => {
+                const isActive = activeTab === index;
+                return (
+                  <div key={index} className="relative z-10">
+                    <button
+                      role="tab"
+                      aria-selected={isActive}
+                      onClick={() => setActiveTab(index)}
+                      className={`flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-200 ${
+                        isActive
+                          ? "bg-terminal-lime text-black hover:bg-terminal-lime-hover scale-105"
+                          : "bg-terminal-light-gray text-terminal-text-secondary hover:bg-terminal-border-light"
+                      }`}
+                    >
+                      <span className={`font-mono text-base font-bold ${isActive ? "text-black" : "text-terminal-text-secondary"}`}>
+                        {step.number}
+                      </span>
+                      <span className="uppercase tracking-wider">{step.title}</span>
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           {/* Tab Panel */}
-          <div role="tabpanel" className="mt-8">
-            <div className="rounded-lg border border-terminal-border-light bg-white p-8 shadow-sm">
-              <div className="mb-6 flex items-center gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-terminal-dark-teal font-mono text-xl font-bold text-terminal-lime">
-                  {steps[activeTab].number}
+          <Reveal animation="fade-up" delay={2}>
+            <div role="tabpanel" className="mt-8">
+              <div className="rounded-xl border border-terminal-border-light bg-white p-8">
+                <div className="mb-6 flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-terminal-dark-teal">
+                    {(() => {
+                      const Icon = steps[activeTab].icon;
+                      return <Icon className="h-6 w-6 text-terminal-lime" />;
+                    })()}
+                  </div>
+                  <h3 className="text-2xl font-semibold leading-tight text-terminal-text-primary">
+                    {steps[activeTab].title}
+                  </h3>
                 </div>
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-terminal-light-gray">
-                  {(() => {
-                    const Icon = steps[activeTab].icon;
-                    return <Icon className="h-5 w-5 text-terminal-text-secondary" />;
-                  })()}
-                </div>
-                <h3 className="text-2xl font-semibold leading-tight text-terminal-text-primary">
-                  {steps[activeTab].title}
-                </h3>
+                <p className="text-base leading-relaxed text-terminal-text-secondary">
+                  {steps[activeTab].description}
+                </p>
               </div>
-              <p className="text-base leading-relaxed text-terminal-text-secondary">
-                {steps[activeTab].description}
-              </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

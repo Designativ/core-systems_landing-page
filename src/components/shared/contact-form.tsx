@@ -15,7 +15,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { ArrowRight } from "lucide-react";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -75,26 +74,27 @@ export function ContactForm() {
   };
 
   return (
-    <div className="rounded-lg border border-terminal-border-light bg-white p-8 shadow-sm">
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <div className="grid gap-6 md:grid-cols-2">
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto max-w-xl space-y-6">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-base font-medium text-terminal-text-primary">
+                <FormLabel className="block text-sm font-semibold leading-6 text-white">
                   Name *
                 </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Your name"
-                    className="h-12 border-terminal-border-light text-base"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
+                <div className="mt-2.5">
+                  <FormControl>
+                    <Input
+                      placeholder="Your name"
+                      className="block w-full h-10 rounded-md bg-white/5 px-3.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-white/50 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-terminal-lime focus-visible:ring-0 border-0"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage className="text-terminal-lime" />
+                </div>
               </FormItem>
             )}
           />
@@ -103,102 +103,109 @@ export function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-base font-medium text-terminal-text-primary">
+                <FormLabel className="block text-sm font-semibold leading-6 text-white">
                   Email *
                 </FormLabel>
-                <FormControl>
-                  <Input
-                    type="email"
-                    placeholder="your@email.com"
-                    className="h-12 border-terminal-border-light text-base"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
+                <div className="mt-2.5">
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder="your@email.com"
+                      className="block w-full h-10 rounded-md bg-white/5 px-3.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-white/50 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-terminal-lime focus-visible:ring-0 border-0"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage className="text-terminal-lime" />
+                </div>
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="company"
+            render={({ field }) => (
+              <FormItem className="sm:col-span-2">
+                <FormLabel className="block text-sm font-semibold leading-6 text-white">
+                  Company (Optional)
+                </FormLabel>
+                <div className="mt-2.5">
+                  <FormControl>
+                    <Input
+                      placeholder="Your company name"
+                      className="block w-full h-10 rounded-md bg-white/5 px-3.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-white/50 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-terminal-lime focus-visible:ring-0 border-0"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage className="text-terminal-lime" />
+                </div>
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="website"
+            render={({ field }) => (
+              <FormItem className="sm:col-span-2">
+                <FormLabel className="block text-sm font-semibold leading-6 text-white">
+                  Website (Optional)
+                </FormLabel>
+                <div className="mt-2.5">
+                  <FormControl>
+                    <Input
+                      type="url"
+                      placeholder="https://yourwebsite.com"
+                      className="block w-full h-10 rounded-md bg-white/5 px-3.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-white/50 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-terminal-lime focus-visible:ring-0 border-0"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage className="text-terminal-lime" />
+                </div>
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem className="sm:col-span-2">
+                <FormLabel className="block text-sm font-semibold leading-6 text-white">
+                  Message *
+                </FormLabel>
+                <div className="mt-2.5">
+                  <FormControl>
+                    <Textarea
+                      placeholder="Tell us about your project or questions..."
+                      rows={4}
+                      className="block w-full min-h-[2.5rem] rounded-md bg-white/5 px-3.5 py-3 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-white/50 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-terminal-lime focus-visible:ring-0 border-0 resize-none"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage className="text-terminal-lime" />
+                </div>
               </FormItem>
             )}
           />
         </div>
-        <FormField
-          control={form.control}
-          name="company"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base font-medium text-terminal-text-primary">
-                Company (Optional)
-              </FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="Your company name"
-                  className="h-12 border-terminal-border-light text-base"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="website"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base font-medium text-terminal-text-primary">
-                Website (Optional)
-              </FormLabel>
-              <FormControl>
-                <Input
-                  type="url"
-                  placeholder="https://yourwebsite.com"
-                  className="h-12 border-terminal-border-light text-base"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base font-medium text-terminal-text-primary">
-                Message *
-              </FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Tell us about your project or questions..."
-                  rows={6}
-                  className="border-terminal-border-light text-base"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button
-          type="submit"
-          size="lg"
-          className="h-14 w-full bg-terminal-lime text-base font-semibold text-black shadow-lg transition-all hover:bg-terminal-lime-hover hover:shadow-xl"
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? "Sending..." : "Send Message"}
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
+        <div className="mt-10">
+          <Button
+            type="submit"
+            className="block w-full rounded-md bg-terminal-lime px-3.5 py-2.5 text-center text-sm font-semibold text-black shadow-sm hover:bg-terminal-lime-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terminal-lime transition-colors"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Sending..." : "Let's talk"}
+          </Button>
+        </div>
         {submitStatus === "success" && (
-          <p className="text-center text-base text-green-600">
+          <p className="text-center text-base text-terminal-lime">
             Thank you! We'll get back to you soon.
           </p>
         )}
         {submitStatus === "error" && (
-          <p className="text-center text-base text-destructive">
+          <p className="text-center text-base text-terminal-lime">
             Something went wrong. Please try again or email us directly.
           </p>
         )}
       </form>
     </Form>
-    </div>
   );
 }

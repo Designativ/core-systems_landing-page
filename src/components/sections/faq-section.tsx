@@ -55,14 +55,14 @@ export function FAQSection() {
   };
 
   return (
-    <section id="faq" className="py-20 md:py-28">
+    <section id="faq" className="py-20 md:py-28 reveal fade-up">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl">
           {/* Header */}
-          <div className="mb-16 text-center">
-            <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
-              FAQs
-            </h2>
+          <div className="mb-16 text-center reveal fade-up">
+              <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
+                FAQ
+              </h2>
             <p className="text-xl leading-relaxed text-terminal-text-secondary">
               Common questions about working with us
             </p>
@@ -70,35 +70,38 @@ export function FAQSection() {
 
           {/* FAQ Items */}
           <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="group rounded-lg border border-terminal-border-light bg-white transition-all duration-300 hover:border-terminal-lime/30 hover:shadow-lg"
-              >
-                <button
-                  onClick={() => toggleQuestion(index)}
-                  className="flex w-full items-center justify-between p-8 text-left transition-colors"
-                  aria-expanded={openIndex === index}
+            {faqs.map((faq, index) => {
+              const delayClass = `delay-${Math.min(Math.floor(index / 2) + 1, 6)}`;
+              return (
+                <div
+                  key={index}
+                  className={`group rounded-lg border border-terminal-border-light bg-white transition-all duration-300 hover:border-terminal-lime/30 hover:shadow-lg reveal fade-up ${delayClass}`}
                 >
-                  <h3 className="pr-8 text-lg font-semibold leading-tight text-terminal-text-primary sm:text-xl">
-                    {faq.question}
-                  </h3>
-                  <ChevronDown
-                    className={cn(
-                      "h-6 w-6 shrink-0 text-terminal-text-secondary transition-transform duration-300",
-                      openIndex === index && "rotate-180"
-                    )}
-                  />
-                </button>
-                {openIndex === index && (
-                  <div className="border-t border-terminal-border-light px-8 pb-8 pt-6">
-                    <p className="text-base leading-relaxed text-terminal-text-secondary">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
+                  <button
+                    onClick={() => toggleQuestion(index)}
+                    className="flex w-full items-center justify-between p-8 text-left transition-colors"
+                    aria-expanded={openIndex === index}
+                  >
+                    <h3 className="pr-8 text-lg font-semibold leading-tight text-terminal-text-primary sm:text-xl">
+                      {faq.question}
+                    </h3>
+                    <ChevronDown
+                      className={cn(
+                        "h-6 w-6 shrink-0 text-terminal-text-secondary transition-transform duration-300",
+                        openIndex === index && "rotate-180"
+                      )}
+                    />
+                  </button>
+                  {openIndex === index && (
+                    <div className="border-t border-terminal-border-light px-8 pb-8 pt-6">
+                      <p className="text-base leading-relaxed text-terminal-text-secondary">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

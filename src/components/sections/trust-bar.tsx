@@ -12,9 +12,9 @@ const softwareLogos = [
 
 export function TrustBar() {
   return (
-    <section className="bg-muted/50 py-12">
+    <section className="bg-muted/50 py-12 reveal fade-up">
       <div className="container mx-auto px-4">
-        <div className="mb-8 text-center">
+        <div className="mb-8 text-center reveal fade-up">
           <h2 className="mb-4 text-lg font-semibold text-muted-foreground">
             Trusted by leading companies in BC
           </h2>
@@ -32,7 +32,7 @@ export function TrustBar() {
             </span>
           </div>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-8 opacity-60 grayscale">
+        <div className="flex flex-wrap items-center justify-center gap-8 opacity-60 grayscale reveal fade-up delay-2">
           {softwareLogos.map((software, index) => (
             <div
               key={index}

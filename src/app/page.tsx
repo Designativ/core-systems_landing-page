@@ -6,6 +6,7 @@ import { HowItWorks } from "@/components/sections/how-it-works";
 import { WhatYouCanExpect } from "@/components/sections/what-you-can-expect";
 import { FAQSection } from "@/components/sections/faq-section";
 import { FinalCTA } from "@/components/sections/final-cta";
+import { Footer } from "@/components/layout/footer";
 
 export default function HomePage() {
   const schema = {
@@ -43,7 +44,10 @@ export default function HomePage() {
       <HowItWorks />
       <WhatYouCanExpect />
       <FAQSection />
-      <FinalCTA />
+      <div className="relative bg-terminal-dark-teal geometric-pattern">
+        <FinalCTA />
+        <Footer />
+      </div>
     </>
   );
 }

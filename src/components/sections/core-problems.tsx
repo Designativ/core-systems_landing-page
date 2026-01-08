@@ -63,7 +63,7 @@ export function CoreProblems() {
   }, [totalCards]);
 
   return (
-    <section className="relative isolate py-20 md:py-28">
+    <section className="relative isolate py-20 md:py-28 reveal fade-up">
       {/* Gradient blur elements */}
       <div
         aria-hidden="true"
@@ -117,7 +117,7 @@ export function CoreProblems() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-7xl">
           {/* Header */}
-          <div className="mx-auto mb-20 max-w-3xl text-center">
+          <div className="mx-auto mb-20 max-w-3xl text-center reveal fade-up">
             <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
               Core Problems We Solve
             </h2>
@@ -131,13 +131,13 @@ export function CoreProblems() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {problems.map((problem, index) => {
               const Icon = problem.icon;
-              const isActive = activeCard === index;
+              const delayClass = `delay-${Math.min(Math.floor(index / 2) + 1, 6)}`;
+              const directionClass = `direction-${(index % 6) + 1}`;
               return (
                 <div
                   key={index}
-                  className={`group relative rounded-lg border-2 border-terminal-border-light bg-white p-8 ${isActive ? "animated-border active" : ""}`}
+                  className={`group relative rounded-lg border border-gray-200 bg-white p-8 transition-all duration-300 hover:border-terminal-lime/30 reveal fade-up ${delayClass} animated-border ${directionClass} active`}
                 >
-
                   {/* Icon */}
                   <div className="relative mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-terminal-dark-teal transition-colors group-hover:bg-terminal-dark-teal z-10">
                     <Icon className="h-6 w-6 text-terminal-lime transition-colors z-10" />

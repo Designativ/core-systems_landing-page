@@ -24,6 +24,7 @@ const config: Config = {
           "text-muted-dark": "hsl(var(--text-muted-dark))",
           "lime": "hsl(var(--accent-lime))",
           "lime-hover": "hsl(var(--accent-lime-hover))",
+          "dark-green": "hsl(var(--accent-dark-green))",
           "border-light": "hsl(var(--border-light))",
           "border-medium": "hsl(var(--border-medium))",
           "border-dark": "hsl(var(--border-dark))",
@@ -80,6 +81,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
+        heading: ["var(--font-space-grotesk)", "sans-serif"],
       },
     },
   },

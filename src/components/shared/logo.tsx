@@ -47,7 +47,7 @@ export function Logo({ className = "", variant = "default" }: LogoProps) {
             viewBox="0 0 28 28"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="text-terminal-lime"
+            className="text-terminal-dark-green"
           >
             <path
               d="M8 4L4 8V20L8 24H20L24 20V8L20 4H8Z"
@@ -55,7 +55,7 @@ export function Logo({ className = "", variant = "default" }: LogoProps) {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-terminal-lime"
+              className="text-terminal-dark-green"
             />
             <path
               d="M10 10L14 14L10 18"
@@ -63,21 +63,23 @@ export function Logo({ className = "", variant = "default" }: LogoProps) {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-terminal-lime"
+              className="text-terminal-dark-green"
             />
             <circle
               cx="18"
               cy="10"
               r="1.5"
               fill="currentColor"
-              className="text-terminal-lime"
+              className="text-terminal-dark-green"
             />
           </svg>
         </div>
         {/* Company name */}
         <span
           className={`font-bold tracking-tight ${
-            isFooter ? "text-xl" : "text-lg"
+            isFooter 
+              ? "text-xl text-white" 
+              : "text-lg text-gray-900"
           }`}
         >
           Terminal

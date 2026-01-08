@@ -35,11 +35,11 @@ const benefits = [
 
 export function WhatYouCanExpect() {
   return (
-    <section className="bg-terminal-dark-teal py-20 text-terminal-text-on-dark md:py-28">
+    <section className="bg-terminal-dark-teal py-20 text-terminal-text-on-dark md:py-28 reveal fade-up">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-7xl">
           {/* Header */}
-          <div className="mx-auto mb-20 max-w-3xl text-center">
+          <div className="mx-auto mb-20 max-w-3xl text-center reveal fade-up">
             <h2 className="mb-3 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
               What You Can Expect
             </h2>
@@ -52,10 +52,11 @@ export function WhatYouCanExpect() {
           <div className="grid gap-8 md:grid-cols-3">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
+              const delayClass = `delay-${Math.min(index + 1, 6)}`;
               return (
                 <div
                   key={index}
-                  className="rounded-lg border border-white/10 bg-terminal-dark-teal-alt p-10 transition-all duration-300 hover:border-terminal-lime/30"
+                  className={`rounded-lg border border-white/10 bg-terminal-dark-teal-alt p-10 transition-all duration-300 hover:border-terminal-lime/30 reveal fade-up ${delayClass}`}
                 >
                   {/* Icon */}
                   <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-xl bg-terminal-lime/10">

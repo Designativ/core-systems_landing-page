@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, IBM_Plex_Mono } from "next/font/google";
+import { Inter, IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { RevealInit } from "@/components/shared/reveal-init";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -13,6 +14,12 @@ const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-mono",
+});
+
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
 });
 
 export const metadata: Metadata = {
@@ -54,12 +61,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${ibmPlexMono.variable} ${inter.className}`}>
-        <div className="flex min-h-screen flex-col">
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <body className={`${inter.variable} ${ibmPlexMono.variable} ${spaceGrotesk.variable} ${inter.className} m-0 p-0`}>
+        <RevealInit />
+        <div className="flex min-h-screen flex-col relative">
           <Header />
           <main className="flex-1">{children}</main>
-          <Footer />
         </div>
       </body>
     </html>

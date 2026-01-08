@@ -1,31 +1,72 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { ToolLogos } from "@/components/shared/tool-logos";
 
 export function HeroSection() {
-  return (
-    <div className="relative isolate flex min-h-screen flex-col justify-center bg-terminal-dark-teal px-6 pt-14 lg:px-8">
-      {/* Top decorative blur element */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-      >
-        <div
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-terminal-lime/40 to-terminal-lime/20 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-        />
-      </div>
+  const [mousePosition, setMousePosition] = useState({ x: 0.5, y: 0.5 });
+  const spot1Ref = useRef<HTMLDivElement>(null);
+  const spot2Ref = useRef<HTMLDivElement>(null);
+  const spot3Ref = useRef<HTMLDivElement>(null);
+  const spot4Ref = useRef<HTMLDivElement>(null);
 
-      <div className="mx-auto w-full max-w-[773px] py-12 sm:py-16">
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      setMousePosition({ x, y });
+
+      // Apply mouse-responsive transforms
+      const offsetX1 = (x - 0.5) * 40;
+      const offsetY1 = (y - 0.5) * 40;
+      const offsetX2 = (x - 0.5) * -35;
+      const offsetY2 = (y - 0.5) * -35;
+      const offsetX3 = (x - 0.5) * 30;
+      const offsetY3 = (y - 0.5) * 50;
+      const offsetX4 = (x - 0.5) * -45;
+      const offsetY4 = (y - 0.5) * 45;
+
+      if (spot1Ref.current) {
+        spot1Ref.current.style.setProperty("--mouse-offset-x", `${offsetX1}px`);
+        spot1Ref.current.style.setProperty("--mouse-offset-y", `${offsetY1}px`);
+      }
+      if (spot2Ref.current) {
+        spot2Ref.current.style.setProperty("--mouse-offset-x", `${offsetX2}px`);
+        spot2Ref.current.style.setProperty("--mouse-offset-y", `${offsetY2}px`);
+      }
+      if (spot3Ref.current) {
+        spot3Ref.current.style.setProperty("--mouse-offset-x", `${offsetX3}px`);
+        spot3Ref.current.style.setProperty("--mouse-offset-y", `${offsetY3}px`);
+      }
+      if (spot4Ref.current) {
+        spot4Ref.current.style.setProperty("--mouse-offset-x", `${offsetX4}px`);
+        spot4Ref.current.style.setProperty("--mouse-offset-y", `${offsetY4}px`);
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+  return (
+    <div 
+      className="relative isolate flex min-h-screen flex-col justify-center bg-terminal-dark-teal px-6 pt-0 lg:px-8 overflow-hidden"
+      style={{
+        "--mouse-x": mousePosition.x,
+        "--mouse-y": mousePosition.y,
+      } as React.CSSProperties}
+    >
+      {/* Animated gradient spots */}
+      <div ref={spot1Ref} className="gradient-spot gradient-spot-1" aria-hidden="true" />
+      <div ref={spot2Ref} className="gradient-spot gradient-spot-2" aria-hidden="true" />
+      <div ref={spot3Ref} className="gradient-spot gradient-spot-3" aria-hidden="true" />
+      <div ref={spot4Ref} className="gradient-spot gradient-spot-4" aria-hidden="true" />
+
+      <div className="mx-auto w-full max-w-[773px] py-20 sm:py-24 relative z-10">
         {/* Badge/Announcement */}
         <div className="mb-8 hidden justify-center sm:flex">
           <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-white/60 ring-1 ring-white/10 hover:ring-white/20">
-            Trusted AI automation partner for operational excellence
+            AI-powered automation for growing BC businesses
           </div>
         </div>
 
@@ -61,26 +102,7 @@ export function HeroSection() {
               </a>
             </Button>
           </div>
-
-          {/* Tool Logos */}
-          <div className="mt-16 border-t border-white/10 pt-12">
-            <ToolLogos />
-          </div>
         </div>
-      </div>
-
-      {/* Bottom decorative blur element */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-      >
-        <div
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-terminal-lime/40 to-terminal-lime/20 opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-        />
       </div>
     </div>
   );

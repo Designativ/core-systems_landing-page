@@ -22,6 +22,7 @@
     --accent-lime: 68 100% 50%; /* #D4FF00 - 4.5:1 contrast on black */
     --accent-lime-hover: 66 100% 47%; /* #C4EF00 - 4.5:1 contrast on black */
     --accent-lime-glow: 68 100% 50% / 0.3;
+    --accent-dark-green: 142 76% 36%; /* Dark green - 4.5:1 contrast on white */
 
     /* Terminal Industries - Borders & Dividers */
     --border-light: 0 0% 90%;
@@ -111,19 +112,21 @@
   label,
   input,
   textarea,
-  select,
-  button {
+  select {
     font-family: var(--font-inter), sans-serif;
   }
   
-  /* Headings use Inter */
+  /* Headings and buttons use Space Grotesk */
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6 {
-    font-family: var(--font-inter), sans-serif;
+  h6,
+  button,
+  [role="tab"],
+  [role="tablist"] button {
+    font-family: var(--font-space-grotesk), sans-serif;
   }
   
   /* Monospace font for numbers, code, labels */
@@ -136,6 +139,13 @@
   
   body {
     @apply bg-background text-foreground antialiased;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    margin: 0;
+    padding: 0;
   }
 
   /* Enhanced Typography */
@@ -217,37 +227,88 @@
     @apply text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl;
   }
 
-  /* Animated border for core problems cards */
-  @keyframes border-rotate {
-    0% {
-      transform: rotate(0deg);
-    }
+  /* Animated border for core problems cards - different directions */
+  @keyframes border-rotate-forward {
     100% {
-      transform: rotate(360deg);
+      transform: translate(-50%, -50%) rotate(1turn);
+    }
+  }
+
+  @keyframes border-rotate-reverse {
+    100% {
+      transform: translate(-50%, -50%) rotate(-1turn);
+    }
+  }
+
+  @keyframes border-rotate-fast {
+    100% {
+      transform: translate(-50%, -50%) rotate(2turn);
+    }
+  }
+
+  @keyframes border-rotate-slow {
+    100% {
+      transform: translate(-50%, -50%) rotate(0.5turn);
     }
   }
 
   .animated-border {
     position: relative;
+    overflow: hidden;
   }
 
   .animated-border::before {
     content: '';
     position: absolute;
-    inset: -2px;
-    border-radius: inherit;
-    background: conic-gradient(
-      from 0deg,
-      transparent 0deg,
-      transparent 300deg,
-      hsl(var(--accent-lime)) 330deg,
-      hsl(var(--accent-lime)) 30deg,
-      transparent 60deg,
-      transparent 360deg
+    z-index: -2;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    width: 99999px;
+    height: 99999px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    /* Border color using terminal lime - reduced angular span for thinner stroke */
+    background-image: conic-gradient(
+      rgba(0,0,0,0) 0deg,
+      rgba(0,0,0,0) 8deg,
+      hsl(var(--accent-lime)) 10deg,
+      hsl(var(--accent-lime)) 12deg,
+      rgba(0,0,0,0) 14deg,
+      rgba(0,0,0,0) 360deg
     );
     opacity: 0;
-    animation: border-rotate 4s linear infinite;
-    z-index: -1;
+  }
+
+  /* Different rotation directions and speeds for each card - slower animations */
+  .animated-border.direction-1::before {
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: border-rotate-forward 8s linear infinite;
+  }
+
+  .animated-border.direction-2::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+    animation: border-rotate-reverse 10s linear infinite;
+  }
+
+  .animated-border.direction-3::before {
+    transform: translate(-50%, -50%) rotate(180deg);
+    animation: border-rotate-forward 7s linear infinite;
+  }
+
+  .animated-border.direction-4::before {
+    transform: translate(-50%, -50%) rotate(270deg);
+    animation: border-rotate-reverse 9s linear infinite;
+  }
+
+  .animated-border.direction-5::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+    animation: border-rotate-forward 11s linear infinite;
+  }
+
+  .animated-border.direction-6::before {
+    transform: translate(-50%, -50%) rotate(135deg);
+    animation: border-rotate-reverse 6s linear infinite;
   }
 
   .animated-border.active::before {
@@ -257,13 +318,238 @@
   .animated-border::after {
     content: '';
     position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: white;
     z-index: -1;
+    /* border width - 1px */
+    left: 1px;
+    top: 1px;
+    /* double the px from the border width left */
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    /* bg color */
+    background: white;
+    /* box border radius - adjust for border width */
+    border-radius: inherit;
   }
 
   .animated-border.bg-terminal-dark-teal-alt::after {
     background: hsl(var(--bg-dark-teal-alt));
+  }
+
+  /* Floating gradient spots animation - automatic slow movement */
+  @keyframes float-orbital-1 {
+    0% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(0, 0);
+    }
+    25% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(80px, -60px);
+    }
+    50% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(40px, 70px);
+    }
+    75% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(-60px, 30px);
+    }
+    100% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(0, 0);
+    }
+  }
+
+  @keyframes float-orbital-2 {
+    0% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(0, 0);
+    }
+    25% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(-70px, -80px);
+    }
+    50% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(90px, 40px);
+    }
+    75% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(-40px, 90px);
+    }
+    100% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(0, 0);
+    }
+  }
+
+  @keyframes float-orbital-3 {
+    0% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(0, 0);
+    }
+    33% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(70px, 80px);
+    }
+    66% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(-80px, -40px);
+    }
+    100% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(0, 0);
+    }
+  }
+
+  @keyframes float-orbital-4 {
+    0% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(0, 0);
+    }
+    33% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(-90px, 70px);
+    }
+    66% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(60px, -70px);
+    }
+    100% {
+      transform: translate(var(--mouse-offset-x, 0), var(--mouse-offset-y, 0)) translate(0, 0);
+    }
+  }
+
+  .gradient-spot {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, hsl(var(--accent-lime)) 0%, transparent 70%);
+    opacity: 0.25;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+  }
+
+  .gradient-spot-1 {
+    width: 500px;
+    height: 500px;
+    top: 10%;
+    left: 8%;
+    animation: float-orbital-1 30s ease-in-out infinite;
+    animation-delay: 0s;
+  }
+
+  .gradient-spot-2 {
+    width: 450px;
+    height: 450px;
+    top: 70%;
+    right: 8%;
+    animation: float-orbital-2 35s ease-in-out infinite;
+    animation-delay: -5s;
+  }
+
+  .gradient-spot-3 {
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 15%;
+    animation: float-orbital-3 28s ease-in-out infinite;
+    animation-delay: -2s;
+  }
+
+  .gradient-spot-4 {
+    width: 480px;
+    height: 480px;
+    top: 30%;
+    right: 15%;
+    animation: float-orbital-4 32s ease-in-out infinite;
+    animation-delay: -7s;
+  }
+
+  /* Scroll reveal animations - slide in on scroll */
+  .reveal {
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+  }
+
+  /* Initial transform state before animation - hidden and translated */
+  .reveal.fade-up:not(.active) {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  .reveal.fade-down:not(.active) {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  .reveal.fade-left:not(.active) {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  .reveal.fade-right:not(.active) {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  .reveal.fade-in:not(.active) {
+    opacity: 0;
+  }
+
+  .reveal.zoom-in:not(.active) {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  /* Active state - visible and in position */
+  .reveal.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .reveal.fade-up.active {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+  }
+
+  .reveal.fade-down.active {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+  }
+
+  .reveal.fade-left.active {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
+
+  .reveal.fade-right.active {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
+
+  .reveal.fade-in.active {
+    opacity: 1 !important;
+  }
+
+  .reveal.zoom-in.active {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+  }
+
+  /* Ensure cards stay visible after reveal animation */
+  .reveal.active,
+  .reveal.active * {
+    visibility: visible !important;
+  }
+
+  /* Delay classes */
+  .reveal.delay-1 {
+    transition-delay: 0.1s;
+  }
+
+  .reveal.delay-2 {
+    transition-delay: 0.2s;
+  }
+
+  .reveal.delay-3 {
+    transition-delay: 0.3s;
+  }
+
+  .reveal.delay-4 {
+    transition-delay: 0.4s;
+  }
+
+  .reveal.delay-5 {
+    transition-delay: 0.5s;
+  }
+
+  .reveal.delay-6 {
+    transition-delay: 0.6s;
   }
 }

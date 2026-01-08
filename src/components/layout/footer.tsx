@@ -4,9 +4,9 @@ import { Logo } from "@/components/shared/logo";
 
 const footerSections = {
   services: [
-    { href: "/services/ux-seo-audit", label: "UX+SEO Audit" },
-    { href: "/services/ai-strategy", label: "AI Strategy & Roadmap" },
-    { href: "/services/automation", label: "AI Automation, Websites & Apps" },
+    { href: "#services", label: "UX+SEO Audit" },
+    { href: "#services", label: "AI Strategy & Roadmap" },
+    { href: "#services", label: "AI Automation, Websites & Apps" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },
@@ -18,63 +18,57 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t bg-terminal-dark-teal text-white geometric-pattern">
-      <div className="container relative mx-auto px-4 py-12">
-        <div className="grid gap-8 md:grid-cols-2 md:justify-end">
-          {/* Services */}
-          <div className="md:text-right">
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-white/60">
-              Services
-            </h3>
-            <ul className="space-y-2">
-              {footerSections.services.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white transition-colors hover:text-terminal-lime"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <footer className="relative text-white">
+      <div className="container relative mx-auto px-4 pt-12 pb-12">
+        {/* First Row: Logo */}
+        <div className="mb-8">
+          <Logo variant="footer" />
+        </div>
 
-          {/* Contact / Social */}
-          <div className="md:text-right">
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-white/60">
-              Contact
-            </h3>
-            <ul className="space-y-3 text-sm text-white/80">
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/nataliia-ivanova-profile/"
-                  target="_self"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-end gap-2 transition-colors hover:text-terminal-lime md:justify-end"
-                >
-                  <span>LinkedIn</span>
-                  <Linkedin className="h-4 w-4" />
-                </a>
-              </li>
-              <li className="flex items-center justify-end gap-2 md:justify-end">
-                <MapPin className="h-4 w-4" />
-                <span>Vancouver, BC</span>
-              </li>
-              <li className="flex items-center justify-end gap-2 md:justify-end">
-                <Clock className="h-4 w-4" />
-                <span>Mon-Fri 8am to 5pm</span>
-              </li>
-            </ul>
+        {/* Second Row: Services */}
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
+          {footerSections.services.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.querySelector(link.href);
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }}
+              className="text-sm text-white transition-colors hover:text-terminal-lime cursor-pointer"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        {/* Third Row: Contact */}
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6 text-sm text-white/80">
+          <a
+            href="https://www.linkedin.com/in/nataliia-ivanova-profile/"
+            target="_self"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 transition-colors hover:text-terminal-lime"
+          >
+            <Linkedin className="h-4 w-4" />
+            <span>LinkedIn</span>
+          </a>
+          <div className="flex items-center gap-2">
+            <MapPin className="h-4 w-4" />
+            <span>Vancouver, BC</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Clock className="h-4 w-4" />
+            <span>Mon-Fri 8am to 5pm</span>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-12 border-t border-white/10 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <div className="flex items-center">
-              <Logo variant="footer" />
-            </div>
             <p className="text-sm text-white/60">
               © {currentYear}. All rights reserved.
             </p>

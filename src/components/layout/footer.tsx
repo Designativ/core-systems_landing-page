@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Linkedin, MapPin, Clock } from "lucide-react";
 import { Logo } from "@/components/shared/logo";

@@ -1,0 +1,29 @@
+# Cursor AI Rules for This Project
+
+## Development URL Links
+
+When working on files in this Next.js project, always provide a clickable development URL link at the end of your response.
+
+### URL Mapping Rules:
+- `src/app/page.tsx` → http://localhost:3000/
+- `src/app/about/page.tsx` → http://localhost:3000/about
+- `src/app/contact/page.tsx` → http://localhost:3000/contact
+- `src/app/api/example/route.ts` → http://localhost:3000/api/example
+- Layout/error/loading files → http://localhost:3000/ (root)
+- Component files → Show the page where they're used, or root if unclear
+
+### Format:
+Always end responses with:
+```
+---
+🔗 **View in browser:** [Page Name](http://localhost:3000/path)
+```
+
+If the dev server might not be running, remind the user:
+```
+💡 Make sure the dev server is running: `npm run dev`
+```
+
+### Default Development URL:
+- Base URL: `http://localhost:3000`
+- Can be overridden with `NEXT_PUBLIC_APP_URL` environment variable

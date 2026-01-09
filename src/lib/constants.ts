@@ -10,7 +10,7 @@ export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000
 export const NAV_LINKS = [
   { href: "#services", label: "Services" },
   { href: "#process", label: "Process" },
-  { href: "#faq", label: "FAQ" },
+  { href: "#faq", label: "FAQs" },
 ] as const;
 
 // Footer links

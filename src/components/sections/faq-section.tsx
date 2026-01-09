@@ -64,7 +64,7 @@ export function FAQSection() {
                 FAQs
               </p>
               <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
-                FAQ
+                FAQs
               </h2>
             <p className="text-xl leading-relaxed text-terminal-text-primary">
               Common questions about working with us

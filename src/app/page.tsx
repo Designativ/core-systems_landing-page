@@ -117,7 +117,7 @@ export default function HomePage() {
     },
   };
 
-  // FAQ Schema
+  // FAQs Schema
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",

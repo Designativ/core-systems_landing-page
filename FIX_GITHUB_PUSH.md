@@ -20,7 +20,7 @@ git push -u origin main
 
 **When prompted:**
 - **Username:** `Designativ`
-- **Password:** Paste your token: `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`
+- **Password:** Paste your token (get it from https://github.com/settings/tokens)
 
 ## 🎯 Alternative Solution: Use GitHub Desktop
 
@@ -54,7 +54,7 @@ If the token still doesn't work, create a new **Classic Personal Access Token**:
 Test if token works with this command:
 
 ```bash
-curl -H "Authorization: token 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" https://api.github.com/repos/Designativ/core-systems-website
+curl -H "Authorization: token YOUR_TOKEN_HERE" https://api.github.com/repos/Designativ/core-systems-website
 ```
 
 If this works (returns repository info), the token is valid but might need to be used differently for git push.

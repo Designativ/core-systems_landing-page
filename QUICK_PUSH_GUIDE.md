@@ -18,7 +18,7 @@ bash PUSH_NOW.sh
 
 When prompted:
 - **Username:** `Designativ`
-- **Password:** Paste your token: `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`
+- **Password:** Paste your token (get it from https://github.com/settings/tokens)
 
 ### Option 2: Manual Push (Step by Step)
 

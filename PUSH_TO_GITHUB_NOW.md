@@ -22,7 +22,7 @@ git push -u origin main
 
 **When prompted for credentials:**
 - **Username:** `Designativ`
-- **Password:** `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`
+- **Password:** Your GitHub Personal Access Token (get it from https://github.com/settings/tokens)
 
 **Important:** Copy and paste the password token when prompted (it won't show as you type).
 

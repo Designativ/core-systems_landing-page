@@ -7,12 +7,12 @@ git remote set-url origin https://github.com/Designativ/core-systems-website.git
 # Push using token as password
 # When prompted:
 # Username: Designativ
-# Password: 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
+# Password: YOUR_TOKEN_HERE (get it from https://github.com/settings/tokens)
 
 echo "Attempting to push to GitHub..."
 echo "Using token as password when prompted..."
 
 git push -u origin main <<EOF
 Designativ
-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
+YOUR_TOKEN_HERE
 EOF

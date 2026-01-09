@@ -55,15 +55,18 @@ export function FAQSection() {
   };
 
   return (
-    <section id="faq" className="py-20 md:py-28 reveal fade-up">
+    <section id="faq" className="py-16 md:py-20 reveal fade-up">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl">
           {/* Header */}
           <div className="mb-16 text-center reveal fade-up">
+              <p className="text-center text-base font-semibold leading-7 text-terminal-text-secondary mb-2">
+                FAQs
+              </p>
               <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
                 FAQ
               </h2>
-            <p className="text-xl leading-relaxed text-terminal-text-secondary">
+            <p className="text-xl leading-relaxed text-terminal-text-primary">
               Common questions about working with us
             </p>
           </div>
@@ -94,7 +97,7 @@ export function FAQSection() {
                   </button>
                   {openIndex === index && (
                     <div className="border-t border-terminal-border-light px-8 pb-8 pt-6">
-                      <p className="text-base leading-relaxed text-terminal-text-secondary">
+                      <p className="text-base leading-relaxed text-terminal-text-primary">
                         {faq.answer}
                       </p>
                     </div>

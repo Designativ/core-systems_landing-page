@@ -552,4 +552,20 @@
   .reveal.delay-6 {
     transition-delay: 0.6s;
   }
+
+  /* Icon pulse animation */
+  @keyframes icon-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.9;
+    }
+  }
+
+  .icon-animate {
+    animation: icon-pulse 2s ease-in-out infinite;
+  }
 }

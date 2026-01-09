@@ -38,7 +38,7 @@ export function WhatWeDo() {
   }, [totalCards]);
 
   return (
-    <section id="services" className="relative isolate bg-terminal-dark-teal py-24 sm:py-32 reveal fade-up">
+    <section id="services" className="relative isolate bg-terminal-dark-teal py-16 sm:py-24 reveal fade-up">
       {/* More gradient blur elements */}
       <div
         aria-hidden="true"
@@ -139,10 +139,10 @@ export function WhatWeDo() {
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h3 className="mt-2 text-lg font-medium tracking-tight text-terminal-lime">
+                  <h3 className="mt-2 text-xl font-medium tracking-tight text-white">
                     {service.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-6 text-white/60">
+                  <p className="mt-2 text-sm leading-6 text-white/90">
                     {service.description}
                   </p>
                 </div>

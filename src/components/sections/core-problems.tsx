@@ -15,13 +15,13 @@ const problems = [
     icon: TrendingDown,
     title: "Our website has visitors but they don't convert",
     description:
-      "We find what's stopping visitors from becoming customers - and help you fix it",
+      "We find what's stopping visitors from becoming customers - and help you fix it.",
   },
   {
     icon: RefreshCw,
     title: "My team wastes hours on the same tasks every week",
     description:
-      "Custom automation built for your exact workflow - give your team back 10+ hours per week - time savings + productivity gains",
+      "Custom automation built for your exact workflow - give your team back 10+ hours per week - time savings + productivity gains.",
   },
   {
     icon: DollarSign,
@@ -51,8 +51,10 @@ const problems = [
 
 export function CoreProblems() {
   const [activeCard, setActiveCard] = useState(0);
+  const [activeIcon, setActiveIcon] = useState(0);
   const totalCards = problems.length;
   const cardDuration = 3000; // 3 seconds per card
+  const iconDuration = 2000; // 2 seconds per icon
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -62,8 +64,16 @@ export function CoreProblems() {
     return () => clearInterval(interval);
   }, [totalCards]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIcon((prev) => (prev + 1) % totalCards);
+    }, iconDuration);
+
+    return () => clearInterval(interval);
+  }, [totalCards]);
+
   return (
-    <section className="relative isolate py-20 md:py-28 reveal fade-up">
+    <section className="relative isolate py-16 md:py-20 reveal fade-up">
       {/* Gradient blur elements */}
       <div
         aria-hidden="true"
@@ -118,10 +128,13 @@ export function CoreProblems() {
         <div className="mx-auto max-w-7xl">
           {/* Header */}
           <div className="mx-auto mb-20 max-w-3xl text-center reveal fade-up">
+            <p className="text-center text-base font-semibold leading-7 text-terminal-text-secondary mb-2">
+              How We Help
+            </p>
             <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
               Core Problems We Solve
             </h2>
-            <p className="text-xl leading-relaxed text-terminal-text-secondary">
+            <p className="text-xl leading-relaxed text-terminal-text-primary">
               We understand the challenges growing businesses face. Here's how we
               help.
             </p>
@@ -136,11 +149,15 @@ export function CoreProblems() {
               return (
                 <div
                   key={index}
-                  className={`group relative rounded-lg border border-gray-200 bg-white p-8 transition-all duration-300 hover:border-terminal-lime/30 reveal fade-up ${delayClass} animated-border ${directionClass} active`}
+                  className={`group relative rounded-lg border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-terminal-lime/30 hover:shadow-md reveal fade-up ${delayClass} animated-border ${directionClass} active`}
                 >
                   {/* Icon */}
-                  <div className="relative mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-terminal-dark-teal transition-colors group-hover:bg-terminal-dark-teal z-10">
-                    <Icon className="h-6 w-6 text-terminal-lime transition-colors z-10" />
+                  <div className={`relative mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-terminal-dark-teal transition-all duration-500 group-hover:bg-terminal-dark-teal z-10 ${
+                    activeIcon === index ? 'scale-110 shadow-lg shadow-terminal-lime/50' : 'scale-100'
+                  }`}>
+                    <Icon className={`h-6 w-6 text-terminal-lime transition-all duration-500 z-10 ${
+                      activeIcon === index ? 'scale-110 drop-shadow-[0_0_8px_rgba(212,255,0,0.6)]' : 'scale-100'
+                    }`} />
                   </div>
 
                   {/* Content */}
@@ -148,7 +165,7 @@ export function CoreProblems() {
                     <h3 className="mb-4 text-xl font-semibold leading-tight text-terminal-text-primary">
                       {problem.title}
                     </h3>
-                    <p className="text-base leading-relaxed text-terminal-text-secondary">
+                    <p className="text-base leading-relaxed text-terminal-text-primary">
                       {problem.description}
                     </p>
                   </div>

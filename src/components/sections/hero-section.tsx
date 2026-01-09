@@ -6,10 +6,27 @@ import { ArrowRight } from "lucide-react";
 
 export function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0.5, y: 0.5 });
+  const [highlightedService, setHighlightedService] = useState(0);
   const spot1Ref = useRef<HTMLDivElement>(null);
   const spot2Ref = useRef<HTMLDivElement>(null);
   const spot3Ref = useRef<HTMLDivElement>(null);
   const spot4Ref = useRef<HTMLDivElement>(null);
+
+  const services = [
+    "UX+SEO Audit",
+    "AI Strategy & Roadmap",
+    "AI Automation",
+    "Websites & Apps",
+  ];
+
+  // Auto-highlight services one by one
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHighlightedService((prev) => (prev + 1) % services.length);
+    }, 2500); // Change every 2.5 seconds for smoother transitions
+
+    return () => clearInterval(interval);
+  }, [services.length]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -50,7 +67,7 @@ export function HeroSection() {
   }, []);
   return (
     <div 
-      className="relative isolate flex min-h-screen flex-col justify-center bg-terminal-dark-teal px-6 pt-0 lg:px-8 overflow-hidden"
+      className="relative isolate flex min-h-[90vh] flex-col bg-terminal-dark-teal px-6 pt-0 lg:px-8 overflow-hidden"
       style={{
         "--mouse-x": mousePosition.x,
         "--mouse-y": mousePosition.y,
@@ -62,7 +79,7 @@ export function HeroSection() {
       <div ref={spot3Ref} className="gradient-spot gradient-spot-3" aria-hidden="true" />
       <div ref={spot4Ref} className="gradient-spot gradient-spot-4" aria-hidden="true" />
 
-      <div className="mx-auto w-full max-w-[773px] py-20 sm:py-24 relative z-10">
+      <div className="mx-auto w-full max-w-[900px] pt-10 sm:pt-12 pb-24 relative z-10 flex flex-col justify-center min-h-[calc(90vh-80px)]">
         {/* Badge/Announcement */}
         <div className="mb-8 hidden justify-center sm:flex">
           <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-white/60 ring-1 ring-white/10 hover:ring-white/20">
@@ -72,15 +89,14 @@ export function HeroSection() {
 
         <div className="text-center">
           <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
-            Next-Gen AI Solutions
-            <br />
-            <span className="text-terminal-lime">for Operational Teams</span>
+            Put Agentic AI to Work — Today
           </h1>
-          <p className="mt-8 text-lg font-medium text-pretty text-white/70 sm:text-xl leading-8">
+          <p className="mt-8 text-lg font-medium text-pretty text-white/90 sm:text-xl leading-8">
             We create targeted intelligent systems that reduce financial
             overhead, optimize leadership decisions, and transform every layer
             of your operational workflow.
           </p>
+
           <div className="mt-10 flex justify-center">
             <Button
               asChild
@@ -103,6 +119,33 @@ export function HeroSection() {
             </Button>
           </div>
         </div>
+      </div>
+
+      {/* Services Pills - Bottom (absolutely positioned) */}
+      <div className="absolute bottom-0 left-0 right-0 px-6 lg:px-8 py-4 bg-terminal-dark-teal flex flex-wrap items-center justify-center gap-3 z-20">
+          {services.map((service, index) => {
+            const isHighlighted = highlightedService === index;
+            return (
+              <a
+                key={index}
+                href="#services"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector("#services");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                }}
+                className={`rounded-full border px-4 py-2 text-base font-medium transition-all duration-700 ease-in-out hover:border-terminal-lime hover:bg-terminal-lime/10 hover:text-terminal-lime ${
+                  isHighlighted
+                    ? "border-terminal-lime bg-terminal-lime/10 text-terminal-lime"
+                    : "border-white/30 bg-transparent text-white"
+                }`}
+              >
+                {service}
+              </a>
+            );
+          })}
       </div>
     </div>
   );

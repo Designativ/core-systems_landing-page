@@ -39,50 +39,81 @@ export function Logo({ className = "", variant = "default" }: LogoProps) {
       className={`flex items-center gap-2 ${className}`}
     >
       <div className="flex items-center gap-2">
-        {/* Terminal icon - square brackets representing terminal/console */}
-        <div className="flex items-center justify-center">
-          <svg
-            width={isFooter ? "32" : "28"}
-            height={isFooter ? "32" : "28"}
-            viewBox="0 0 28 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="text-terminal-dark-green"
-          >
-            <path
-              d="M8 4L4 8V20L8 24H20L24 20V8L20 4H8Z"
+        {/* Core Systems icon - connected nodes representing systems/networks */}
+        {!isFooter && (
+          <div className="flex items-center justify-center">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-terminal-dark-green"
+              style={{ color: 'hsl(142, 76%, 36%)' }}
+            >
+            {/* Connected nodes/circles representing core systems */}
+            <circle
+              cx="14"
+              cy="10"
+              r="3"
               stroke="currentColor"
               strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-terminal-dark-green"
-            />
-            <path
-              d="M10 10L14 14L10 18"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-terminal-dark-green"
+              fill="none"
             />
             <circle
-              cx="18"
+              cx="8"
+              cy="18"
+              r="3"
+              stroke="currentColor"
+              strokeWidth="2"
+              fill="none"
+            />
+            <circle
+              cx="20"
+              cy="18"
+              r="3"
+              stroke="currentColor"
+              strokeWidth="2"
+              fill="none"
+            />
+            {/* Connection lines */}
+            <line
+              x1="14"
+              y1="13"
+              x2="10.5"
+              y2="16.5"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <line
+              x1="14"
+              y1="13"
+              x2="17.5"
+              y2="16.5"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            {/* Center dot */}
+            <circle
+              cx="14"
               cy="10"
               r="1.5"
               fill="currentColor"
-              className="text-terminal-dark-green"
             />
           </svg>
-        </div>
+          </div>
+        )}
         {/* Company name */}
         <span
           className={`font-bold tracking-tight ${
             isFooter 
               ? "text-xl text-white" 
-              : "text-lg text-gray-900"
+              : "text-lg text-terminal-dark-green"
           }`}
         >
-          Terminal
+          Core Systems
         </span>
       </div>
     </Link>

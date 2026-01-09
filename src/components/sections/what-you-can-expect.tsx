@@ -35,7 +35,7 @@ const benefits = [
 
 export function WhatYouCanExpect() {
   return (
-    <section className="bg-terminal-dark-teal py-20 text-terminal-text-on-dark md:py-28 reveal fade-up">
+    <section className="bg-terminal-dark-teal py-16 text-terminal-text-on-dark md:py-20 reveal fade-up">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-7xl">
           {/* Header */}
@@ -43,7 +43,7 @@ export function WhatYouCanExpect() {
             <h2 className="mb-3 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
               What You Can Expect
             </h2>
-            <p className="text-xl leading-relaxed text-white/80">
+            <p className="text-xl leading-relaxed text-white/90">
               Measurable results across every engagement
             </p>
           </div>
@@ -73,7 +73,7 @@ export function WhatYouCanExpect() {
                     {benefit.items.map((item, itemIndex) => (
                       <li
                         key={itemIndex}
-                        className="flex items-start gap-4 text-base leading-relaxed text-white/90"
+                        className="flex items-start gap-4 text-base leading-relaxed text-white"
                       >
                         <div className="mt-2 h-2 w-2 shrink-0 rounded-full bg-terminal-lime" />
                         <span>{item}</span>

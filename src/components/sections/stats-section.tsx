@@ -7,7 +7,7 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="bg-terminal-dark-teal py-20 text-terminal-text-on-dark md:py-32">
+    <section className="bg-terminal-dark-teal py-16 text-terminal-text-on-dark md:py-24">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-12 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">

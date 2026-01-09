@@ -10,7 +10,7 @@ const trustIndicators = [
 
 export function FinalCTA() {
   return (
-    <section id="contact" className="relative isolate px-6 pt-24 pb-0 sm:pt-32 sm:pb-0 lg:px-8 reveal fade-up">
+    <section id="contact" className="relative isolate px-6 pt-16 pb-0 sm:pt-24 sm:pb-0 lg:px-8 reveal fade-up">
       {/* Gradient blur element */}
       <div
         aria-hidden="true"
@@ -30,10 +30,13 @@ export function FinalCTA() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
             {/* Left Column - Content */}
             <div className="flex flex-col justify-start reveal fade-up">
+              <p className="text-base font-semibold leading-7 text-terminal-lime mb-2">
+                contact us
+              </p>
               <h2 className="mb-3 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
                 Ready to Transform Your Operations?
               </h2>
-              <p className="mb-8 text-lg leading-8 text-white/80">
+              <p className="mb-8 text-lg leading-8 text-white/90">
                 Book a free 30-minute consultation. No pressure, no commitment -
                 just honest advice about what's possible for your business.
               </p>

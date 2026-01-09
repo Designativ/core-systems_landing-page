@@ -12,7 +12,7 @@ export default function HomePage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Terminal Industries",
+    name: "Core Systems",
     description:
       "We create targeted intelligent systems that reduce financial overhead, optimize leadership decisions, and transform every layer of your operational workflow.",
     url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",

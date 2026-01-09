@@ -22,7 +22,7 @@ export default function HomePage() {
     logo: `${baseUrl}/images/logo.svg`,
     email: "natalieindesign@gmail.com",
     sameAs: [
-      "https://www.linkedin.com/company/terminal-industries",
+      "https://www.linkedin.com/in/nataliia-ivanova-profile/",
       "https://twitter.com/terminal",
     ],
     contactPoint: {

@@ -53,19 +53,17 @@ export function RevealInit() {
           return;
         }
         
-        // If element is already visible, activate it immediately
-        if (isElementPartiallyVisible(el)) {
-          el.classList.add("active");
-        } else {
-          observer.observe(el);
-        }
+        // Don't activate immediately on first render to prevent hydration mismatch
+        // Always use IntersectionObserver, even for visible elements
+        observer.observe(el);
       });
     };
 
-    // Small delay to ensure DOM is ready
+    // Wait for hydration to complete before adding active classes
+    // This prevents hydration mismatch errors
     const initTimeout = setTimeout(() => {
       observeRevealElements();
-    }, 100);
+    }, 300);
 
     // Use MutationObserver to handle dynamically added content
     const mutationObserver = new MutationObserver(() => {

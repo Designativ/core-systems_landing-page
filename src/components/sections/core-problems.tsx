@@ -149,7 +149,7 @@ export function CoreProblems() {
               return (
                 <div
                   key={index}
-                  className={`group relative rounded-lg border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-terminal-lime/30 hover:shadow-md reveal fade-up ${delayClass} animated-border ${directionClass} active`}
+                  className={`group relative rounded-lg border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-terminal-lime/30 hover:shadow-md reveal fade-up ${delayClass} animated-border ${directionClass}`}
                 >
                   {/* Icon */}
                   <div className={`relative mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-terminal-dark-teal transition-all duration-500 group-hover:bg-terminal-dark-teal z-10 ${

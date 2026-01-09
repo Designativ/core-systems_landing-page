@@ -130,7 +130,7 @@ export function WhatWeDo() {
             return (
               <div
                 key={index}
-                className={`group relative min-h-[500px] rounded-lg bg-terminal-dark-teal-alt p-8 transition-all duration-300 reveal fade-up ${delayClass} animated-border ${directionClass} active`}
+                className={`group relative min-h-[500px] rounded-lg bg-terminal-dark-teal-alt p-8 transition-all duration-300 reveal fade-up ${delayClass} animated-border ${directionClass}`}
               >
                 {/* Icon */}
                 <div className="relative mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-terminal-lime/10 z-10">

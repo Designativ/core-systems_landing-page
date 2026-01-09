@@ -86,16 +86,31 @@ export function ContactForm() {
       });
 
       // Check if response is JSON before parsing
-      const contentType = response.headers.get("content-type");
-      if (!contentType || !contentType.includes("application/json")) {
+      const contentType = response.headers.get("content-type") || "";
+      
+      // Try to parse as JSON regardless of content-type header
+      let result;
+      try {
         const text = await response.text();
-        console.error("API returned non-JSON response:", text.substring(0, 200));
+        
+        // Check if it looks like HTML
+        if (text.trim().startsWith("<!DOCTYPE") || text.trim().startsWith("<html")) {
+          console.error("API returned HTML instead of JSON. This usually means the API route failed or Next.js returned an error page.");
+          console.error("Response preview:", text.substring(0, 300));
+          setSubmitStatus("error");
+          setErrorMessage("The server returned an error page. Please check the console for details or try again later.");
+          return;
+        }
+        
+        // Try to parse as JSON
+        result = JSON.parse(text);
+      } catch (parseError) {
+        console.error("Failed to parse API response:", parseError);
+        console.error("Response content-type:", contentType);
         setSubmitStatus("error");
-        setErrorMessage("Server error. Please try again or email us directly.");
+        setErrorMessage("Unable to process server response. Please try again.");
         return;
       }
-
-      const result = await response.json();
 
       if (response.ok) {
         setSubmitStatus("success");

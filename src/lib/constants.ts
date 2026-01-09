@@ -20,9 +20,9 @@ export const FOOTER_LINKS = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
-// Social media links (placeholder - update with your actual links)
+// Social media links
 export const SOCIAL_LINKS = {
   twitter: "#",
   github: "#",
-  linkedin: "#",
+  linkedin: "https://www.linkedin.com/in/nataliia-ivanova-profile/",
 } as const;

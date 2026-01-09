@@ -1,0 +1,16 @@
+STEP 1: Get Resend API Key
+1. Go to https://resend.com
+2. Sign up (free)
+3. Go to https://resend.com/api-keys
+4. Click "Create API Key"
+5. Copy the key (starts with re_)
+
+STEP 2: Create .env.local file
+In your project root, create .env.local with:
+RESEND_API_KEY=re_your_actual_key_here
+RESEND_FROM_EMAIL=onboarding@resend.dev
+
+STEP 3: Restart dev server
+npm run dev
+
+Done! Form will send emails to natalieindesign@gmail.com

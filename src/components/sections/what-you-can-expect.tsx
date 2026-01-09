@@ -57,7 +57,7 @@ export function WhatYouCanExpect() {
               return (
                 <div
                   key={index}
-                  className={`group relative rounded-lg border border-white/10 bg-terminal-dark-teal-alt p-10 transition-all duration-300 hover:border-terminal-lime/30 reveal fade-up ${delayClass} animated-border ${directionClass} active overflow-hidden`}
+                  className={`group relative rounded-lg border border-white/10 bg-terminal-dark-teal-alt p-10 transition-all duration-300 hover:border-terminal-lime/30 reveal fade-up ${delayClass} animated-border ${directionClass} overflow-hidden`}
                 >
                   {/* Icon */}
                   <div className="relative mb-8 flex h-14 w-14 items-center justify-center rounded-xl bg-terminal-lime/10 z-10">

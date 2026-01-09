@@ -1,18 +1,46 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization to avoid errors at module load time
+function getResendClient() {
+  try {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      return null;
+    }
+    return new Resend(apiKey);
+  } catch (error) {
+    console.error("Failed to initialize Resend client:", error);
+    return null;
+  }
+}
 
 export async function POST(request: Request) {
+  // Ensure we always return JSON with proper headers
+  const jsonHeaders = {
+    "Content-Type": "application/json",
+  };
+
   try {
-    const body = await request.json();
+    // Parse request body with error handling
+    let body;
+    try {
+      body = await request.json();
+    } catch (parseError) {
+      console.error("Error parsing request body:", parseError);
+      return NextResponse.json(
+        { error: "Invalid request format. Please ensure all fields are properly filled." },
+        { status: 400, headers: jsonHeaders }
+      );
+    }
+
     const { name, email, company, website, message, recaptchaToken } = body;
 
     // Validate required fields
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Name, email, and message are required" },
-        { status: 400 }
+        { status: 400, headers: jsonHeaders }
       );
     }
 
@@ -21,7 +49,7 @@ export async function POST(request: Request) {
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: "Invalid email address" },
-        { status: 400 }
+        { status: 400, headers: jsonHeaders }
       );
     }
 
@@ -38,7 +66,7 @@ export async function POST(request: Request) {
         } else {
           return NextResponse.json(
             { error: "reCAPTCHA verification failed. Please refresh the page and try again." },
-            { status: 400 }
+            { status: 400, headers: jsonHeaders }
           );
         }
       } else {
@@ -75,7 +103,7 @@ export async function POST(request: Request) {
               
               return NextResponse.json(
                 { error: errorMessage },
-                { status: 400 }
+                { status: 400, headers: jsonHeaders }
               );
             }
           } else {
@@ -98,7 +126,7 @@ export async function POST(request: Request) {
           } else {
             return NextResponse.json(
               { error: "reCAPTCHA verification error. Please try again." },
-              { status: 500 }
+              { status: 500, headers: jsonHeaders }
             );
           }
         }
@@ -112,12 +140,13 @@ export async function POST(request: Request) {
       }
     }
 
-    // Check if RESEND_API_KEY is configured
-    if (!process.env.RESEND_API_KEY) {
+    // Check if RESEND_API_KEY is configured and initialize client
+    const resend = getResendClient();
+    if (!resend) {
       console.error("RESEND_API_KEY is not configured. Please add it to .env.local");
       return NextResponse.json(
         { error: "Email service is not configured. Please set RESEND_API_KEY in .env.local" },
-        { status: 500 }
+        { status: 500, headers: jsonHeaders }
       );
     }
 
@@ -190,7 +219,7 @@ Timestamp: ${new Date().toLocaleString()}
       console.error("Resend API error:", error);
       return NextResponse.json(
         { error: `Failed to send email: ${error.message || JSON.stringify(error)}` },
-        { status: 500 }
+        { status: 500, headers: jsonHeaders }
       );
     }
 
@@ -198,14 +227,35 @@ Timestamp: ${new Date().toLocaleString()}
 
     return NextResponse.json(
       { message: "Form submitted successfully", id: data?.id },
-      { status: 200 }
+      { status: 200, headers: jsonHeaders }
     );
   } catch (error) {
+    // Catch any unhandled errors and ensure we always return JSON
     console.error("Error processing contact form:", error);
     const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    
+    // Safely extract error details
+    let errorDetails = "Failed to process form submission";
+    if (error instanceof Error) {
+      errorDetails = error.message || errorDetails;
+    }
+    
+    // Ensure we always return JSON, never HTML
+    try {
     return NextResponse.json(
-      { error: `Failed to process form submission: ${errorMessage}` },
-      { status: 500 }
-    );
+        { error: errorDetails },
+        { status: 500, headers: jsonHeaders }
+      );
+    } catch (jsonError) {
+      // Last resort - return a basic JSON error if even JSON creation fails
+      console.error("Critical: Failed to create JSON response:", jsonError);
+      return new Response(
+        JSON.stringify({ error: "Internal server error" }),
+        {
+          status: 500,
+          headers: jsonHeaders,
+        }
+      );
+    }
   }
 }

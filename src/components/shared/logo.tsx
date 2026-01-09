@@ -48,8 +48,7 @@ export function Logo({ className = "", variant = "default" }: LogoProps) {
               viewBox="0 0 28 28"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="text-terminal-dark-green"
-              style={{ color: 'hsl(142, 76%, 36%)' }}
+              style={{ color: 'rgb(48, 58, 74)' }}
             >
             {/* Connected nodes/circles representing core systems */}
             <circle
@@ -110,8 +109,9 @@ export function Logo({ className = "", variant = "default" }: LogoProps) {
           className={`font-bold tracking-tight ${
             isFooter 
               ? "text-xl text-white" 
-              : "text-lg text-terminal-dark-green"
+              : "text-lg"
           }`}
+          style={!isFooter ? { color: 'rgb(48, 58, 74)' } : undefined}
         >
           Core Systems
         </span>

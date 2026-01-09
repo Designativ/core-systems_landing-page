@@ -53,23 +53,24 @@ export function WhatYouCanExpect() {
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               const delayClass = `delay-${Math.min(index + 1, 6)}`;
+              const directionClass = `direction-${(index % 6) + 1}`;
               return (
                 <div
                   key={index}
-                  className={`rounded-lg border border-white/10 bg-terminal-dark-teal-alt p-10 transition-all duration-300 hover:border-terminal-lime/30 reveal fade-up ${delayClass}`}
+                  className={`group relative rounded-lg border border-white/10 bg-terminal-dark-teal-alt p-10 transition-all duration-300 hover:border-terminal-lime/30 reveal fade-up ${delayClass} animated-border ${directionClass} active overflow-hidden`}
                 >
                   {/* Icon */}
-                  <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-xl bg-terminal-lime/10">
-                    <Icon className="h-7 w-7 text-terminal-lime" />
+                  <div className="relative mb-8 flex h-14 w-14 items-center justify-center rounded-xl bg-terminal-lime/10 z-10">
+                    <Icon className="h-7 w-7 text-terminal-lime z-10" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="mb-6 text-2xl font-semibold text-white">
+                  <h3 className="relative mb-6 text-2xl font-semibold text-white z-10">
                     {benefit.title}
                   </h3>
 
                   {/* Items */}
-                  <ul className="space-y-4">
+                  <ul className="relative space-y-4 z-10">
                     {benefit.items.map((item, itemIndex) => (
                       <li
                         key={itemIndex}

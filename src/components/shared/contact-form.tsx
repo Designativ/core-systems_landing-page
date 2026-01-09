@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -29,6 +30,17 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  
+  // Try to get reCAPTCHA hook, but handle gracefully if not available
+  let executeRecaptcha: ((action: string) => Promise<string>) | undefined;
+  try {
+    const recaptcha = useGoogleReCaptcha();
+    executeRecaptcha = recaptcha.executeRecaptcha;
+  } catch (error) {
+    // reCAPTCHA provider not available - form will work without it
+    console.log("reCAPTCHA not available - form will work without spam protection");
+  }
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -44,8 +56,20 @@ export function ContactForm() {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
+    setErrorMessage(null);
 
     try {
+      // Get reCAPTCHA token (optional - form works without it)
+      let recaptchaToken = "";
+      if (executeRecaptcha) {
+        try {
+          recaptchaToken = await executeRecaptcha("contact_form");
+        } catch (recaptchaError) {
+          console.warn("reCAPTCHA error:", recaptchaError);
+          // Continue without token if reCAPTCHA fails (allows testing without setup)
+        }
+      }
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -57,17 +81,35 @@ export function ContactForm() {
           company: data.company || "",
           website: data.website || "",
           message: data.message,
+          recaptchaToken,
         }),
       });
+
+      // Check if response is JSON before parsing
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        const text = await response.text();
+        console.error("API returned non-JSON response:", text.substring(0, 200));
+        setSubmitStatus("error");
+        setErrorMessage("Server error. Please try again or email us directly.");
+        return;
+      }
+
+      const result = await response.json();
 
       if (response.ok) {
         setSubmitStatus("success");
         form.reset();
       } else {
         setSubmitStatus("error");
+        setErrorMessage(result.error || "Something went wrong. Please try again.");
+        console.error("Form submission error:", result.error);
       }
     } catch (error) {
       setSubmitStatus("error");
+      const errorMsg = error instanceof Error ? error.message : "Network error. Please check your connection and try again.";
+      setErrorMessage(errorMsg);
+      console.error("Form submission error:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -202,7 +244,7 @@ export function ContactForm() {
         )}
         {submitStatus === "error" && (
           <p className="text-center text-base text-terminal-lime">
-            Something went wrong. Please try again or email us directly.
+            {errorMessage || "Something went wrong. Please try again or email us directly."}
           </p>
         )}
       </form>

@@ -94,12 +94,46 @@ npx shadcn-ui@latest add [component-name]
 
 ### Environment Variables
 
-Copy `.env.example` to `.env.local` and update values:
+Create a `.env.local` file in the root directory and add the following:
 
 ```env
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_APP_NAME=My Website
+
+# Email Configuration (Resend)
+RESEND_API_KEY=re_your_api_key_here
+RESEND_FROM_EMAIL=noreply@yourdomain.com
+
+# reCAPTCHA v3 Configuration (Optional but recommended)
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_site_key_here
+RECAPTCHA_SECRET_KEY=your_secret_key_here
 ```
+
+**Setting up Email with Resend:**
+
+1. Sign up for a free account at [Resend](https://resend.com)
+2. Get your API key from the Resend dashboard
+3. Add `RESEND_API_KEY` to your `.env.local` file
+4. Set `RESEND_FROM_EMAIL` to your verified domain email (or use `onboarding@resend.dev` for testing)
+5. Form submissions will be sent to `natalieindesign@gmail.com`
+
+**Setting up reCAPTCHA v3 (Invisible CAPTCHA):**
+
+1. Sign up for [Google reCAPTCHA](https://www.google.com/recaptcha/admin)
+2. Register a new site:
+   - Choose **reCAPTCHA v3** (invisible)
+   - Add your domain(s)
+   - Accept the terms
+3. Get your keys:
+   - **Site Key**: Add as `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` in `.env.local`
+   - **Secret Key**: Add as `RECAPTCHA_SECRET_KEY` in `.env.local`
+4. The CAPTCHA works invisibly - no user interaction required!
+5. For localhost testing, add `localhost` to your allowed domains in reCAPTCHA settings
+
+**Note:** For production, make sure to:
+- Verify your domain in Resend
+- Use a proper "from" email address (not `onboarding@resend.dev`)
+- Add these environment variables to your hosting provider (e.g., Vercel)
 
 ## 📝 Next Steps
 

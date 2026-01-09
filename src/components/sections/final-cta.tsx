@@ -1,11 +1,10 @@
-import { Users, FileText, DollarSign, Shield } from "lucide-react";
+import { Users, FileText, DollarSign } from "lucide-react";
 import { ContactForm } from "@/components/shared/contact-form";
 
 const trustIndicators = [
-  { text: "Expert consultation (no cost)", icon: Users },
+  { text: "Expert consultation (free 30-min)", icon: Users },
   { text: "Personalized action plan", icon: FileText },
   { text: "Upfront pricing", icon: DollarSign },
-  { text: "Risk-free exploration", icon: Shield },
 ];
 
 export function FinalCTA() {
@@ -31,14 +30,14 @@ export function FinalCTA() {
             {/* Left Column - Content */}
             <div className="flex flex-col justify-start reveal fade-up">
               <p className="text-base font-semibold leading-7 text-terminal-lime mb-2">
-                contact us
+                Contact Us
               </p>
               <h2 className="mb-3 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
                 Ready to Transform Your Operations?
               </h2>
               <p className="mb-8 text-lg leading-8 text-white/90">
-                Book a free 30-minute consultation. No pressure, no commitment -
-                just honest advice about what's possible for your business.
+                Our consultations are pressure-free and non-sales oriented.
+                We prioritize honesty and clear communication, and we won't recommend moving forward unless we genuinely believe it's the right fit.
               </p>
               <div className="space-y-4">
                 {trustIndicators.map((indicator, index) => {

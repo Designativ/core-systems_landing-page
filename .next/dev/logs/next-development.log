@@ -1,0 +1,35 @@
+[00:00:00.600] Server  LOG     ✓ Ready in 422ms
+[00:00:07.384] Server  WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:35.013] Server  WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:35.122] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:35.122] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:35.122] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:35.147] Server  WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:35.236] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:35.236] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:35.236] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:35.453] Server  WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:35.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:35.518] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:35.518] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:35.847] Server  WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:35.917] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:35.917] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:35.917] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:39.124] Server  WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:39.215] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:39.215] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:01:39.215] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:31:46.515] Server  LOG       Reload env: .env.local
+[00:31:46.715] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:31:46.715] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:31:47.293] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[00:31:47.293] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[01:06:16.037] Server  LOG     ✓ Compiled in 43ms
+[01:06:17.774] Server  LOG     ✓ Compiled in 464ms
+[01:06:18.075] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[01:06:18.075] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[01:06:40.631] Server  WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[01:06:40.745] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:06:40.745] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.
+[01:06:40.745] Browser WARN    NEXT_PUBLIC_RECAPTCHA_SITE_KEY is not configured. reCAPTCHA is disabled.

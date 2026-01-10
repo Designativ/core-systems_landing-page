@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/contact/route": "/api/contact",
+  "/api/example/route": "/api/example",
+  "/api/version-history/route": "/api/version-history",
+  "/design-system/page": "/design-system",
+  "/page": "/",
+  "/privacy/page": "/privacy",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/terms/page": "/terms",
+  "/version-history/page": "/version-history"
+}

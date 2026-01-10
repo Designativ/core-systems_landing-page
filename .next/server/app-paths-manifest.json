@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
+  "/api/example/route": "app/api/example/route.js",
+  "/api/version-history/route": "app/api/version-history/route.js",
+  "/design-system/page": "app/design-system/page.js",
+  "/page": "app/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/terms/page": "app/terms/page.js",
+  "/version-history/page": "app/version-history/page.js"
+}

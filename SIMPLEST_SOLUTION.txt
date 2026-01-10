@@ -1,0 +1,21 @@
+SIMPLEST SOLUTION - DO THIS NOW:
+
+1. Open GitHub Desktop
+2. File → Remove Repository (uncheck "delete files")
+3. File → Add Local Repository
+4. Select: Website 2.0 folder
+5. Click "Add"
+6. Click "Publish branch" button
+
+That's it. If "Publish branch" is still gray, the repository might already exist on GitHub but be empty. In that case, you can just deploy directly to Vercel by uploading files through Vercel's interface instead of using GitHub.
+
+TO DEPLOY TO VERCEL WITHOUT GITHUB:
+
+1. Go to vercel.com
+2. Sign up/login
+3. Click "Add New Project"
+4. Instead of "Import from Git", look for "Upload" or "Deploy"
+5. Drag your entire "Website 2.0" folder
+6. It will deploy!
+
+This bypasses GitHub completely.

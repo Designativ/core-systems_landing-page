@@ -1,4 +1,4 @@
-import { TrendingUp, Zap, Target } from "lucide-react";
+import { TrendingUp, Zap, Target, Users } from "lucide-react";
 
 const benefits = [
   {
@@ -31,13 +31,21 @@ const benefits = [
       "Data-backed recommendations that get executive buy-in",
     ],
   },
+  {
+    icon: Users,
+    title: "From AI Literacy & Training",
+    items: [
+      "Reduced \"prompt fatigue\"—stop wasting time struggling with bad outputs and get results in fewer tries",
+      "Confident adoption, moving from fear of \"being replaced\" to using AI as a daily productivity booster",
+    ],
+  },
 ];
 
 export function WhatYouCanExpect() {
   return (
     <section className="bg-terminal-dark-teal py-16 text-terminal-text-on-dark md:py-20 reveal fade-up">
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[100rem]">
           {/* Header */}
           <div className="mx-auto mb-20 max-w-3xl text-center reveal fade-up">
             <h2 className="mb-3 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
@@ -49,7 +57,7 @@ export function WhatYouCanExpect() {
           </div>
 
           {/* Benefits Grid */}
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               const delayClass = `delay-${Math.min(index + 1, 6)}`;

@@ -1,4 +1,68 @@
-<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="120" height="40" rx="4" fill="currentColor" opacity="0.1"/>
-  <text x="60" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="currentColor">LOGO</text>
+<svg width="200" height="40" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Core Systems icon - connected nodes representing systems/networks -->
+  <g id="icon">
+    <!-- Connected nodes/circles -->
+    <circle
+      cx="14"
+      cy="10"
+      r="3"
+      stroke="currentColor"
+      stroke-width="2"
+      fill="none"
+    />
+    <circle
+      cx="8"
+      cy="18"
+      r="3"
+      stroke="currentColor"
+      stroke-width="2"
+      fill="none"
+    />
+    <circle
+      cx="20"
+      cy="18"
+      r="3"
+      stroke="currentColor"
+      stroke-width="2"
+      fill="none"
+    />
+    <!-- Connection lines -->
+    <line
+      x1="14"
+      y1="13"
+      x2="10.5"
+      y2="16.5"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <line
+      x1="14"
+      y1="13"
+      x2="17.5"
+      y2="16.5"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <!-- Center dot -->
+    <circle
+      cx="14"
+      cy="10"
+      r="1.5"
+      fill="currentColor"
+    />
+  </g>
+  
+  <!-- Company name text -->
+  <text
+    x="35"
+    y="20"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="18"
+    font-weight="bold"
+    fill="currentColor"
+  >
+    Core Systems
+  </text>
 </svg>

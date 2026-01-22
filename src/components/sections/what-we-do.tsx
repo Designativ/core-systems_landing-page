@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Search, Brain, Bot, BarChart3, AlertCircle, CheckCircle2, GraduationCap } from "lucide-react";
+import { Search, Brain, Bot, BarChart3, AlertCircle, CheckCircle2 } from "lucide-react";
 
 const services = [
   {
@@ -21,12 +21,6 @@ const services = [
     title: "AI Automation, Websites & Apps",
     description:
       "We build AI-powered automation systems, conversion-focused websites, and custom applications designed for your exact needs. We deliver measurable ROI with solutions your team will actually use. Every project includes training, support, and ongoing optimization.",
-  },
-  {
-    icon: GraduationCap,
-    title: "AI Literacy & Training",
-    description:
-      "We equip your team with a deep understanding of LLMs, prioritizing critical security and data hygiene. We drive a cultural shift from a passive \"passenger\" to an active \"pilot\" mindset, reinforcing skills through advanced prompt engineering and rigorous hands-on practice.",
   },
 ];
 
@@ -128,7 +122,7 @@ export function WhatWeDo() {
             What We Do
           </h2>
         </div>
-        <div className="mt-10 grid gap-4 sm:mt-16 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:mt-16 sm:grid-cols-1 md:grid-cols-3">
           {services.map((service, index) => {
             const Icon = service.icon;
             const delayClass = `delay-${Math.min(index + 1, 6)}`;
@@ -267,11 +261,6 @@ export function WhatWeDo() {
                         </div>
                       </div>
                     </div>
-                  </div>
-                )}
-                {index === 3 && (
-                  <div className="flex flex-1 items-center justify-center px-8 pb-6 sm:px-10 sm:pb-8 mt-8">
-                    <GraduationCap className="h-20 w-20 text-terminal-lime/40" />
                   </div>
                 )}
               </div>

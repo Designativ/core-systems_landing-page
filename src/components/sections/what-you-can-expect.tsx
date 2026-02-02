@@ -25,7 +25,7 @@ const benefits = [
     icon: Target,
     title: "From Strategic Planning",
     items: [
-      "Clear, prioritized roadmap with expected ROI for each initiative",
+      "Clear, prioritized roadmap",
       "Confident budget allocation based on projected impact",
       "Elimination of wasted spend on ineffective tactics",
       "Data-backed recommendations that get executive buy-in",

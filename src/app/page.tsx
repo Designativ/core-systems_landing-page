@@ -51,7 +51,7 @@ export default function HomePage() {
       {
         "@type": "Offer",
         name: "AI Strategy & Roadmap",
-        description: "Strategic planning with clear, prioritized roadmap and expected ROI for each initiative",
+        description: "Strategic planning with clear, prioritized roadmap",
       },
     ],
   };

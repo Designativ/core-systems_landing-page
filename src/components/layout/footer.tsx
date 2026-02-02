@@ -6,9 +6,9 @@ import { Logo } from "@/components/shared/logo";
 
 const footerSections = {
   services: [
-    { href: "#services", label: "UX Audit" },
+    { href: "#services", label: "Automation" },
     { href: "#services", label: "AI Strategy & Roadmap" },
-    { href: "#services", label: "AI Automation, Websites & Apps" },
+    { href: "#services", label: "Websites & Apps" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },

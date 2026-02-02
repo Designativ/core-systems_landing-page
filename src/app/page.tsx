@@ -3,7 +3,7 @@ import { TrustBar } from "@/components/sections/trust-bar";
 import { CoreProblems } from "@/components/sections/core-problems";
 import { WhatWeDo } from "@/components/sections/what-we-do";
 import { HowItWorks } from "@/components/sections/how-it-works";
-import { WhatYouCanExpect } from "@/components/sections/what-you-can-expect";
+// import { WhatYouCanExpect } from "@/components/sections/what-you-can-expect";
 import { FAQSection } from "@/components/sections/faq-section";
 import { FinalCTA } from "@/components/sections/final-cta";
 import { Footer } from "@/components/layout/footer";
@@ -15,7 +15,7 @@ export default function HomePage() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Core Systems",
+    name: "Natalie Ivanova",
     description:
       "AI-powered automation for growing BC businesses. I create targeted intelligent systems that reduce financial overhead, optimize leadership decisions, and transform every layer of your operational workflow.",
     url: baseUrl,
@@ -60,7 +60,7 @@ export default function HomePage() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Core Systems",
+    name: "Natalie Ivanova",
     url: baseUrl,
     potentialAction: {
       "@type": "SearchAction",
@@ -79,7 +79,7 @@ export default function HomePage() {
     serviceType: "Business Automation & AI Solutions",
     provider: {
       "@type": "Organization",
-      name: "Core Systems",
+      name: "Natalie Ivanova",
     },
     areaServed: {
       "@type": "Country",
@@ -87,7 +87,7 @@ export default function HomePage() {
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Core Systems Services",
+      name: "Natalie Ivanova Services",
       itemListElement: [
         {
           "@type": "Offer",
@@ -171,7 +171,7 @@ export default function HomePage() {
       <CoreProblems />
       <WhatWeDo />
       <HowItWorks />
-      <WhatYouCanExpect />
+      {/* <WhatYouCanExpect /> */}
       <FAQSection />
       <div className="relative bg-terminal-dark-teal geometric-pattern">
         <FinalCTA />

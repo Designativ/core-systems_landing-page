@@ -39,7 +39,7 @@ export function Logo({ className = "", variant = "default" }: LogoProps) {
       className={`flex items-center gap-2 ${className}`}
     >
       <div className="flex items-center gap-2">
-        {/* Core Systems icon - connected nodes representing systems/networks */}
+        {/* Natalie Ivanova icon - connected nodes representing systems/networks */}
         {!isFooter && (
           <div className="flex items-center justify-center">
             <svg
@@ -113,7 +113,7 @@ export function Logo({ className = "", variant = "default" }: LogoProps) {
           }`}
           style={!isFooter ? { color: 'rgb(48, 58, 74)' } : undefined}
         >
-          Core Systems
+          Natalie Ivanova
         </span>
       </div>
     </Link>

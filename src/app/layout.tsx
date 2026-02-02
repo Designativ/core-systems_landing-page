@@ -24,7 +24,7 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 });
 
-const appName = process.env.NEXT_PUBLIC_APP_NAME || "Core Systems";
+const appName = process.env.NEXT_PUBLIC_APP_NAME || "Natalie Ivanova";
 const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 const appDescription = "AI-powered automation for growing BC businesses. I create targeted intelligent systems that reduce financial overhead, optimize leadership decisions, and transform every layer of your operational workflow.";
 
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     "UX SEO improvements",
     "AI strategy",
   ],
-  authors: [{ name: "Core Systems" }],
-  creator: "Core Systems",
-  publisher: "Core Systems",
+  authors: [{ name: "Natalie Ivanova" }],
+  creator: "Natalie Ivanova",
+  publisher: "Natalie Ivanova",
   formatDetection: {
     email: false,
     address: false,

@@ -30,11 +30,11 @@ const faqs = [
     answer:
       "Both. I leverage proven platforms when appropriate (reducing cost and risk) and build custom solutions when your needs require it. Our recommendations are always based on what will deliver ROI fastest, not what's most technically impressive.",
   },
-  {
-    question: "What kind of ROI should I expect?",
-    answer:
-      "This depends on your starting point, but clients typically see 20-40% improvements in conversion rates from UX/SEO fixes, and 10-30 hours per week saved from initial automation implementations. I establish clear success metrics during the discovery phase.",
-  },
+  // {
+  //   question: "What kind of ROI should I expect?",
+  //   answer:
+  //     "This depends on your starting point, but clients typically see 20-40% improvements in conversion rates from UX/SEO fixes, and 10-30 hours per week saved from initial automation implementations. I establish clear success metrics during the discovery phase.",
+  // },
   {
     question: "Do I need technical expertise on our team?",
     answer:

@@ -106,7 +106,7 @@ async function generateOGImage(iconPath, outputPath) {
         
         <!-- Text Content -->
         <g transform="translate(${padding}, ${height / 2 + 20})">
-          <text x="0" y="0" class="title">Core Systems</text>
+          <text x="0" y="0" class="title">Natalie Ivanova</text>
           <text x="0" y="90" class="subtitle">AI-powered automation for growing BC businesses</text>
         </g>
       </svg>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy Policy for Core Systems",
+  description: "Privacy Policy for Natalie Ivanova",
 };
 
 export default function PrivacyPolicyPage() {
@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
               1. Introduction
             </h2>
             <p className="mb-4">
-              Core Systems ("I," "my," or "me") is committed to protecting your privacy. This Privacy Policy
+              Natalie Ivanova ("I," "my," or "me") is committed to protecting your privacy. This Privacy Policy
               explains how I collect, use, disclose, and safeguard your information when you visit my website or use
               my services.
             </p>
@@ -174,7 +174,7 @@ export default function PrivacyPolicyPage() {
               If you have any questions about this Privacy Policy or wish to exercise your rights, please contact me:
             </p>
             <p className="mb-4">
-              <strong>Core Systems</strong>
+              <strong>Natalie Ivanova</strong>
               <br />
               Email: <a href="mailto:info@terminalindustries.com" className="text-terminal-lime hover:underline">info@terminalindustries.com</a>
               <br />

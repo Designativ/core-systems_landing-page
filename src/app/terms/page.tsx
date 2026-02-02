@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms of Service for Core Systems",
+  description: "Terms of Service for Natalie Ivanova",
 };
 
 export default function TermsOfServicePage() {
@@ -31,7 +31,7 @@ export default function TermsOfServicePage() {
               1. Agreement to Terms
             </h2>
             <p className="mb-4">
-              By accessing or using the services provided by Core Systems ("I," "my," or "me"), you agree to be
+              By accessing or using the services provided by Natalie Ivanova ("I," "my," or "me"), you agree to be
               bound by these Terms of Service ("Terms"). If you disagree with any part of these Terms, you may not
               access or use our services.
             </p>
@@ -42,7 +42,7 @@ export default function TermsOfServicePage() {
               2. Description of Services
             </h2>
             <p className="mb-4">
-              Core Systems provides AI-powered automation systems, conversion-focused websites, custom
+              Natalie Ivanova provides AI-powered automation systems, conversion-focused websites, custom
               applications, UX/SEO audits, and related consulting services. I reserve the right to modify, suspend, or
               discontinue any aspect of our services at any time without prior notice.
             </p>
@@ -70,7 +70,7 @@ export default function TermsOfServicePage() {
               4. Service Agreements
             </h2>
             <p className="mb-4">
-              Specific services provided by Core Systems will be governed by separate written agreements that
+              Specific services provided by Natalie Ivanova will be governed by separate written agreements that
               detail the scope of work, deliverables, timelines, pricing, and other terms specific to each engagement.
               These Terms serve as a general framework and do not override specific service agreements.
             </p>
@@ -97,9 +97,9 @@ export default function TermsOfServicePage() {
               6. Intellectual Property Rights
             </h2>
             <p className="mb-4">
-              The services, content, features, and functionality of our website are owned by Core Systems and are
+              The services, content, features, and functionality of our website are owned by Natalie Ivanova and are
               protected by international copyright, trademark, patent, trade secret, and other intellectual property
-              laws. Unless otherwise specified in a separate agreement, all rights remain with Core Systems.
+              laws. Unless otherwise specified in a separate agreement, all rights remain with Natalie Ivanova.
             </p>
           </section>
 
@@ -139,7 +139,7 @@ export default function TermsOfServicePage() {
               9. Limitation of Liability
             </h2>
             <p className="mb-4">
-              To the fullest extent permitted by law, Core Systems shall not be liable for any indirect,
+              To the fullest extent permitted by law, Natalie Ivanova shall not be liable for any indirect,
               incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether
               incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting
               from your use of our services.
@@ -151,7 +151,7 @@ export default function TermsOfServicePage() {
               10. Indemnification
             </h2>
             <p className="mb-4">
-              You agree to indemnify, defend, and hold harmless Core Systems, its officers, directors, employees,
+              You agree to indemnify, defend, and hold harmless Natalie Ivanova, its officers, directors, employees,
               agents, and affiliates from any claims, damages, losses, liabilities, and expenses (including legal fees)
               arising from your use of our services, violation of these Terms, or infringement of any rights of another.
             </p>
@@ -198,7 +198,7 @@ export default function TermsOfServicePage() {
               If you have any questions about these Terms of Service, please contact us:
             </p>
             <p className="mb-4">
-              <strong>Core Systems</strong>
+              <strong>Natalie Ivanova</strong>
               <br />
               Email: <a href="mailto:info@terminalindustries.com" className="text-terminal-lime hover:underline">info@terminalindustries.com</a>
               <br />

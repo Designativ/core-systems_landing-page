@@ -41,7 +41,7 @@ export function CookieConsent() {
               </h3>
             </div>
             <p className="text-sm text-terminal-text-secondary sm:text-base">
-              We use cookies to enhance your experience. By clicking "Accept All", you consent to our use of cookies. Learn more in our{" "}
+              I use cookies to enhance your experience. By clicking "Accept All", you consent to our use of cookies. Learn more in our{" "}
               <a
                 href="/privacy"
                 className="text-terminal-dark-teal hover:underline font-medium"

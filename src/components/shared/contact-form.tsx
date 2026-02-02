@@ -254,7 +254,7 @@ export function ContactForm() {
         </div>
         {submitStatus === "success" && (
           <p className="text-center text-base text-terminal-lime">
-            Thank you! We'll get back to you soon.
+            Thank you! I'll get back to you soon.
           </p>
         )}
         {submitStatus === "error" && (

@@ -17,7 +17,7 @@ export default function HomePage() {
     "@type": "Organization",
     name: "Core Systems",
     description:
-      "AI-powered automation for growing BC businesses. We create targeted intelligent systems that reduce financial overhead, optimize leadership decisions, and transform every layer of your operational workflow.",
+      "AI-powered automation for growing BC businesses. I create targeted intelligent systems that reduce financial overhead, optimize leadership decisions, and transform every layer of your operational workflow.",
     url: baseUrl,
     logo: `${baseUrl}/images/logo.svg`,
     email: "natalieindesign@gmail.com",
@@ -45,7 +45,7 @@ export default function HomePage() {
       },
       {
         "@type": "Offer",
-        name: "UX + SEO Improvements",
+        name: "UX Audit",
         description: "20-40% increase in website conversion rates and 2-3x improvement in organic search visibility",
       },
       {
@@ -127,23 +127,23 @@ export default function HomePage() {
         name: "What happens on the free discovery call?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We discuss your current situation, goals, and challenges. We'll ask about your website performance, team capabilities, and what you've already tried. You'll leave with a clear understanding of whether we're a fit and what next steps might look like. No sales pressure.",
+          text: "I discuss your current situation, goals, and challenges. I'll ask about your website performance, team capabilities, and what you've already tried. You'll leave with a clear understanding of whether I'm a fit and what next steps might look like. No sales pressure.",
         },
       },
       {
         "@type": "Question",
-        name: "How quickly can we get started?",
+        name: "How quickly can I get started?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "After our free discovery call, we typically deliver a custom proposal within 1-3 business days. Deep-dive audits usually take 1-2 weeks, and we can begin implementation immediately after that if you choose to move forward.",
+          text: "After our free discovery call, I typically deliver a custom proposal within 1-3 business days. Deep-dive audits usually take 1-2 weeks, and I can begin implementation immediately after that if you choose to move forward.",
         },
       },
       {
         "@type": "Question",
-        name: "What kind of ROI should we expect?",
+        name: "What kind of ROI should I expect?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "This depends on your starting point, but clients typically see 20-40% improvements in conversion rates from UX/SEO fixes, and 10-30 hours per week saved from initial automation implementations. We establish clear success metrics during the discovery phase.",
+          text: "This depends on your starting point, but clients typically see 20-40% improvements in conversion rates from UX/SEO fixes, and 10-30 hours per week saved from initial automation implementations. I establish clear success metrics during the discovery phase.",
         },
       },
     ],

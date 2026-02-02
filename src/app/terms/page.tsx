@@ -31,7 +31,7 @@ export default function TermsOfServicePage() {
               1. Agreement to Terms
             </h2>
             <p className="mb-4">
-              By accessing or using the services provided by Core Systems ("we," "our," or "us"), you agree to be
+              By accessing or using the services provided by Core Systems ("I," "my," or "me"), you agree to be
               bound by these Terms of Service ("Terms"). If you disagree with any part of these Terms, you may not
               access or use our services.
             </p>
@@ -43,7 +43,7 @@ export default function TermsOfServicePage() {
             </h2>
             <p className="mb-4">
               Core Systems provides AI-powered automation systems, conversion-focused websites, custom
-              applications, UX/SEO audits, and related consulting services. We reserve the right to modify, suspend, or
+              applications, UX/SEO audits, and related consulting services. I reserve the right to modify, suspend, or
               discontinue any aspect of our services at any time without prior notice.
             </p>
           </section>
@@ -124,7 +124,7 @@ export default function TermsOfServicePage() {
             </h2>
             <p className="mb-4">
               Our services are provided "as is" and "as available" without warranties of any kind, either express or
-              implied. We do not warrant that:
+              implied. I do not warrant that:
             </p>
             <ul className="mb-4 ml-6 list-disc space-y-2">
               <li>Our services will meet your specific requirements</li>
@@ -162,7 +162,7 @@ export default function TermsOfServicePage() {
               11. Termination
             </h2>
             <p className="mb-4">
-              We may terminate or suspend your access to our services immediately, without prior notice or liability,
+              I may terminate or suspend your access to my services immediately, without prior notice or liability,
               for any reason, including if you breach these Terms. Upon termination, your right to use the services will
               immediately cease.
             </p>
@@ -184,7 +184,7 @@ export default function TermsOfServicePage() {
               13. Changes to Terms
             </h2>
             <p className="mb-4">
-              We reserve the right to modify or replace these Terms at any time. If a revision is material, we will
+              I reserve the right to modify or replace these Terms at any time. If a revision is material, I will
               provide at least 30 days notice prior to any new terms taking effect. Your continued use of our services
               after any changes constitutes acceptance of the new Terms.
             </p>

@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     quote:
-      "Finally, a team that actually listens. They didn't just sell us software - they took time to understand our business and built exactly what we needed.",
+      "Finally, a team that actually listens. They didn't just sell us software - they took time to understand our business and built exactly what I needed.",
     name: "Sarah Johnson",
     title: "CEO",
     company: "Tech Startup Inc.",
@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     quote:
-      "Best investment we made this year. The automation they built saves us 15 hours a week and eliminated human errors in our order processing.",
+      "Best investment I made this year. The automation they built saves us 15 hours a week and eliminated human errors in our order processing.",
     name: "Mike Chen",
     title: "Founder",
     company: "E-commerce Co.",

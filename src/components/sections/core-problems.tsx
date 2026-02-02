@@ -19,7 +19,7 @@ const problems = [
   },
   {
     icon: DollarSign,
-    title: "Our projects keep going over budget and we don't see it coming",
+    title: "Our projects keep going over budget and I don't see it coming",
     description:
       "Real-time budget tracking with early warning systems - catch overruns before they kill your margins.",
   },
@@ -39,7 +39,7 @@ const problems = [
     icon: TrendingDown,
     title: "Our growth has stalled because our manual processes can't handle more volume",
     description:
-      "Operational infrastructure that scales with you. We replace manual bottlenecks with automated systems that allow you to increase volume 5x without scaling your headcount.",
+      "Operational infrastructure that scales with you. I replace manual bottlenecks with automated systems that allow you to increase volume 5x without scaling your headcount.",
   },
   {
     icon: Brain,
@@ -129,13 +129,13 @@ export function CoreProblems() {
           {/* Header */}
           <div className="mx-auto mb-20 max-w-3xl text-center reveal fade-up">
             <p className="text-center text-base font-semibold leading-7 text-terminal-text-secondary mb-2">
-              How We Help
+              How I Help
             </p>
             <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
-              Core Problems We Solve
+              Core Problems I Solve
             </h2>
             <p className="text-xl leading-relaxed text-terminal-text-primary">
-              We understand the challenges growing businesses face. Here's how we
+              I understand the challenges growing businesses face. Here's how I
               help.
             </p>
           </div>

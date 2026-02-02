@@ -10,21 +10,21 @@ const steps = [
     icon: Search,
     title: "Discovery",
     description:
-      "We listen first, prescribe second. We start with a conversation about your business challenges, goals, and where you want to go. This helps us understand if we're the right fit and which solutions will deliver the most value.",
+      "I listen first, prescribe second. I start with a conversation about your business challenges, goals, and where you want to go. This helps me understand if I'm the right fit and which solutions will deliver the most value.",
   },
   {
     number: "2",
     icon: FileText,
     title: "Proposal",
     description:
-      "No guesswork, just clarity. You receive a tailored proposal outlining the scope, timeline, deliverables, and investment—no surprises, just clarity on what to expect and how we'll work together.",
+      "No guesswork, just clarity. You receive a tailored proposal outlining the scope, timeline, deliverables, and investment—no surprises, just clarity on what to expect and how I'll work with you.",
   },
   {
     number: "3",
     icon: BarChart3,
     title: "Analysis",
     description:
-      "Deep work, zero interruptions. We roll up our sleeves and get to work—analyzing your current state, identifying opportunities, and developing solutions tailored to your specific needs. You'll have access to a live project dashboard where you can track progress anytime.",
+      "Deep work, zero interruptions. I roll up my sleeves and get to work—analyzing your current state, identifying opportunities, and developing solutions tailored to your specific needs. You'll have access to a live project dashboard where you can track progress anytime.",
   },
   {
     number: "4",
@@ -38,7 +38,7 @@ const steps = [
     icon: Rocket,
     title: "Execution",
     description:
-      "From plan to performance. We create your implementation roadmap, build and deploy solutions, train your team, provide ongoing optimization and support, and serve as your long-term strategic partner.",
+      "From plan to performance. I create your implementation roadmap, build and deploy solutions, train your team, provide ongoing optimization and support, and serve as your long-term strategic partner.",
   },
 ];
 

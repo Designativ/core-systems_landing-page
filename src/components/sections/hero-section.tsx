@@ -13,9 +13,8 @@ export function HeroSection() {
   const spot4Ref = useRef<HTMLDivElement>(null);
 
   const services = [
-    "UX Audit",
+    "Automation",
     "AI Strategy & Roadmap",
-    "AI Automation",
     "Websites & Apps",
   ];
 
@@ -92,7 +91,7 @@ export function HeroSection() {
             Put Agentic AI to Work — Today
           </h1>
           <p className="mt-8 text-lg font-medium text-pretty text-white/90 sm:text-xl leading-8">
-            We create targeted intelligent systems that reduce financial
+            I create targeted intelligent systems that reduce financial
             overhead, optimize leadership decisions, and transform every layer
             of your operational workflow.
           </p>

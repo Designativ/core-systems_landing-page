@@ -26,7 +26,7 @@ const spaceGrotesk = Space_Grotesk({
 
 const appName = process.env.NEXT_PUBLIC_APP_NAME || "Core Systems";
 const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
-const appDescription = "AI-powered automation for growing BC businesses. We create targeted intelligent systems that reduce financial overhead, optimize leadership decisions, and transform every layer of your operational workflow.";
+const appDescription = "AI-powered automation for growing BC businesses. I create targeted intelligent systems that reduce financial overhead, optimize leadership decisions, and transform every layer of your operational workflow.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(appUrl),

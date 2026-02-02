@@ -8,19 +8,19 @@ const services = [
     icon: Search,
     title: "UX Audit",
     description:
-      "Our growth has stalled because our manual processes can't handle more volume. Operational infrastructure that scales with you. We replace manual bottlenecks with automated systems that allow you to increase volume 5x without scaling your headcount.",
+      "Our growth has stalled because our manual processes can't handle more volume. Operational infrastructure that scales with you. I replace manual bottlenecks with automated systems that allow you to increase volume 5x without scaling your headcount.",
   },
   {
     icon: Brain,
     title: "AI Strategy & Roadmap",
     description:
-      "We analyze your business processes to identify high-impact automation opportunities and create a pragmatic implementation roadmap— just proven strategies that deliver measurable results.",
+      "I analyze your business processes to identify high-impact automation opportunities and create a pragmatic implementation roadmap— just proven strategies that deliver measurable results.",
   },
   {
     icon: Bot,
     title: "AI Automation, Websites & Apps",
     description:
-      "We build AI-powered automation systems, conversion-focused websites, and custom applications designed for your exact needs. We deliver measurable ROI with solutions your team will actually use. Every project includes training, support, and ongoing optimization.",
+      "I build AI-powered automation systems, conversion-focused websites, and custom applications designed for your exact needs. I deliver measurable ROI with solutions your team will actually use. Every project includes training, support, and ongoing optimization.",
   },
 ];
 
@@ -119,7 +119,7 @@ export function WhatWeDo() {
             Our Services
           </h2>
           <h2 className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
-            What We Do
+            What I Do
           </h2>
         </div>
         <div className="mt-10 grid gap-4 sm:mt-16 sm:grid-cols-1 md:grid-cols-3">

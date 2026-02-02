@@ -8,42 +8,42 @@ const faqs = [
   {
     question: "What happens on the free discovery call?",
     answer:
-      "We discuss your current situation, goals, and challenges. We'll ask about your website performance, team capabilities, and what you've already tried. You'll leave with a clear understanding of whether we're a fit and what next steps might look like. No sales pressure.",
+      "I discuss your current situation, goals, and challenges. I'll ask about your website performance, team capabilities, and what you've already tried. You'll leave with a clear understanding of whether I'm a fit and what next steps might look like. No sales pressure.",
   },
   {
-    question: "How quickly can we get started?",
+    question: "How quickly can I get started?",
     answer:
-      "After our free discovery call, we typically deliver a custom proposal within 1-3 business days. Deep-dive audits usually take 1-2 weeks, and we can begin implementation immediately after that if you choose to move forward.",
+      "After our free discovery call, I typically deliver a custom proposal within 1-3 business days. Deep-dive audits usually take 1-2 weeks, and I can begin implementation immediately after that if you choose to move forward.",
   },
   {
     question: "Is there a minimum commitment?",
     answer:
-      "Just the initial project scope we agree on. Many clients start with an audit to validate the relationship and potential before committing to larger initiatives.",
+      "Just the initial project scope I agree on. Many clients start with an audit to validate the relationship and potential before committing to larger initiatives.",
   },
   {
-    question: "Can you just do the strategy, or do we need implementation too?",
+    question: "Can you just do the strategy, or do I need implementation too?",
     answer:
-      "Both options work. Many clients start with strategy and audit, then choose whether to implement themselves, use their existing team, or partner with us for execution. We're flexible based on your capabilities and preferences.",
+      "Both options work. Many clients start with strategy and audit, then choose whether to implement themselves, use their existing team, or partner with us for execution. I'm flexible based on your capabilities and preferences.",
   },
   {
     question: "Do you build custom AI solutions or use existing tools?",
     answer:
-      "Both. We leverage proven platforms when appropriate (reducing cost and risk) and build custom solutions when your needs require it. Our recommendations are always based on what will deliver ROI fastest, not what's most technically impressive.",
+      "Both. I leverage proven platforms when appropriate (reducing cost and risk) and build custom solutions when your needs require it. Our recommendations are always based on what will deliver ROI fastest, not what's most technically impressive.",
   },
   {
-    question: "What kind of ROI should we expect?",
+    question: "What kind of ROI should I expect?",
     answer:
-      "This depends on your starting point, but clients typically see 20-40% improvements in conversion rates from UX/SEO fixes, and 10-30 hours per week saved from initial automation implementations. We establish clear success metrics during the discovery phase.",
+      "This depends on your starting point, but clients typically see 20-40% improvements in conversion rates from UX/SEO fixes, and 10-30 hours per week saved from initial automation implementations. I establish clear success metrics during the discovery phase.",
   },
   {
-    question: "Do we need technical expertise on our team?",
+    question: "Do I need technical expertise on our team?",
     answer:
-      "No. We translate technical concepts into business language and can handle implementation without requiring engineering resources on your side. That said, we're happy to collaborate with technical teams if you have them.",
+      "No. I translate technical concepts into business language and can handle implementation without requiring engineering resources on your side. That said, I'm happy to collaborate with technical teams if you have them.",
   },
   {
-    question: "What if we need ongoing support after the initial project?",
+    question: "What if I need ongoing support after the initial project?",
     answer:
-      "We offer flexible partnership models including monthly retainers, project-based work, or advisory arrangements. Most clients evolve into an ongoing relationship, but there's no pressure or requirement.",
+      "I offer flexible partnership models including monthly retainers, project-based work, or advisory arrangements. Most clients evolve into an ongoing relationship, but there's no pressure or requirement.",
   },
 ];
 

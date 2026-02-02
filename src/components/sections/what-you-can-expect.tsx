@@ -3,7 +3,7 @@ import { TrendingUp, Zap, Target } from "lucide-react";
 const benefits = [
   {
     icon: TrendingUp,
-    title: "From UX + SEO Improvements",
+    title: "From UX Audit",
     items: [
       "20-40% increase in website conversion rates",
       "2-3x improvement in organic search visibility",

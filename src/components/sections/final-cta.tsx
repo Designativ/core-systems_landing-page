@@ -37,7 +37,7 @@ export function FinalCTA() {
               </h2>
               <p className="mb-8 text-lg leading-8 text-white/90">
                 Our consultations are pressure-free and non-sales oriented.
-                We prioritize honesty and clear communication, and we won't recommend moving forward unless we genuinely believe it's the right fit.
+                I prioritize honesty and clear communication, and I won't recommend moving forward unless I genuinely believe it's the right fit.
               </p>
               <div className="space-y-4">
                 {trustIndicators.map((indicator, index) => {

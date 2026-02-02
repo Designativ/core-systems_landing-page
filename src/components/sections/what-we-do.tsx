@@ -5,22 +5,22 @@ import { Search, Brain, Bot, BarChart3, AlertCircle, CheckCircle2 } from "lucide
 
 const services = [
   {
-    icon: Search,
-    title: "UX Audit",
-    description:
-      "Our growth has stalled because our manual processes can't handle more volume. Operational infrastructure that scales with you. I replace manual bottlenecks with automated systems that allow you to increase volume 5x without scaling your headcount.",
-  },
-  {
     icon: Brain,
     title: "AI Strategy & Roadmap",
     description:
-      "I analyze your business processes to identify high-impact automation opportunities and create a pragmatic implementation roadmap— just proven strategies that deliver measurable results.",
+      "I analyze your unique business processes to identify where AI integration will provide the highest impact. This phase delivers a pragmatic implementation roadmap and a proven strategic blueprint.",
   },
   {
     icon: Bot,
-    title: "AI Automation, Websites & Apps",
+    title: "Automation",
     description:
-      "I build AI-powered automation systems, conversion-focused websites, and custom applications designed for your exact needs. I deliver measurable ROI with solutions your team will actually use. Every project includes training, support, and ongoing optimization.",
+      "I implement the automated systems required to scale your business operations. By replacing manual bottlenecks with scalable infrastructure, I enable your business to handle increased volume without expanding your headcount.",
+  },
+  {
+    icon: Search,
+    title: "Websites & Apps",
+    description:
+      "I develop custom websites and applications tailored to your specific business requirements. To ensure long-term utility, every project includes personal support for training, system integration, and ongoing optimization.",
   },
 ];
 
@@ -160,7 +160,7 @@ export function WhatWeDo() {
                           <div className="h-2 w-2 rounded-full bg-terminal-lime/70 shadow-sm shadow-terminal-lime/50"></div>
                           <div className="h-2 w-2 rounded-full bg-terminal-lime/50 shadow-sm shadow-terminal-lime/40"></div>
                           <div className="h-2 w-2 rounded-full bg-terminal-lime/40 shadow-sm shadow-terminal-lime/30"></div>
-                          <div className="ml-2 flex-1 text-xs font-medium text-white/50">UX Audit</div>
+                          <div className="ml-2 flex-1 text-xs font-medium text-white/50">AI Strategy & Roadmap</div>
                         </div>
                       </div>
                       

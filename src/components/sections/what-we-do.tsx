@@ -6,9 +6,9 @@ import { Search, Brain, Bot, BarChart3, AlertCircle, CheckCircle2 } from "lucide
 const services = [
   {
     icon: Search,
-    title: "UX+SEO Audit",
+    title: "Operational Infrastructure",
     description:
-      "We identify what's stopping visitors from converting—usability issues, technical problems, and conversion blockers. You'll get a detailed report with screenshots and a prioritized action plan.",
+      "Our growth has stalled because our manual processes can't handle more volume. Operational infrastructure that scales with you. We replace manual bottlenecks with automated systems that allow you to increase volume 5x without scaling your headcount.",
   },
   {
     icon: Brain,
@@ -160,7 +160,7 @@ export function WhatWeDo() {
                           <div className="h-2 w-2 rounded-full bg-terminal-lime/70 shadow-sm shadow-terminal-lime/50"></div>
                           <div className="h-2 w-2 rounded-full bg-terminal-lime/50 shadow-sm shadow-terminal-lime/40"></div>
                           <div className="h-2 w-2 rounded-full bg-terminal-lime/40 shadow-sm shadow-terminal-lime/30"></div>
-                          <div className="ml-2 flex-1 text-xs font-medium text-white/50">UX+SEO Audit</div>
+                          <div className="ml-2 flex-1 text-xs font-medium text-white/50">Operational Infrastructure</div>
                         </div>
                       </div>
                       

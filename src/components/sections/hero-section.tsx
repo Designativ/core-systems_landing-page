@@ -13,7 +13,7 @@ export function HeroSection() {
   const spot4Ref = useRef<HTMLDivElement>(null);
 
   const services = [
-    "Operational Infrastructure",
+    "UX Audit",
     "AI Strategy & Roadmap",
     "AI Automation",
     "Websites & Apps",

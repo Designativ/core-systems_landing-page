@@ -12,12 +12,6 @@ import {
 
 const problems = [
   {
-    icon: TrendingDown,
-    title: "Our website has visitors but they don't convert",
-    description:
-      "We find what's stopping visitors from becoming customers - and help you fix it.",
-  },
-  {
     icon: RefreshCw,
     title: "My team wastes hours on the same tasks every week",
     description:
@@ -40,6 +34,12 @@ const problems = [
     title: "Our CFO/leadership team is drowning and becoming the bottleneck",
     description:
       "AI that handles the administrative load so your executives can focus on strategy - worth $$$$ in leadership time.",
+  },
+  {
+    icon: TrendingDown,
+    title: "Our growth has stalled because our manual processes can't handle more volume",
+    description:
+      "Operational infrastructure that scales with you. We replace manual bottlenecks with automated systems that allow you to increase volume 5x without scaling your headcount.",
   },
   {
     icon: Brain,

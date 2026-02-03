@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Linkedin, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Logo } from "@/components/shared/logo";
 
 const footerSections = {
   services: [
-    { href: "#services", label: "Automation" },
     { href: "#services", label: "AI Strategy & Roadmap" },
+    { href: "#services", label: "Automation" },
     { href: "#services", label: "Websites & Apps" },
   ],
   legal: [
@@ -21,7 +21,7 @@ export function Footer() {
 
   return (
     <footer className="relative text-white">
-      <div className="container relative mx-auto px-4 pt-12 pb-12">
+      <div className="container relative mx-auto max-w-7xl px-4 pt-12 pb-12 lg:px-8">
         {/* First Row: Logo */}
         <div className="mb-8">
           <Logo variant="footer" />
@@ -50,13 +50,18 @@ export function Footer() {
         {/* Third Row: Contact */}
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6 text-sm text-white/80">
           <a
-            href="https://www.linkedin.com/in/nataliia-ivanova-profile/"
-            target="_self"
-            rel="noopener noreferrer"
+            href="mailto:natalieindesign@gmail.com"
             className="flex items-center gap-2 transition-colors hover:text-terminal-lime"
           >
-            <Linkedin className="h-4 w-4" />
-            <span>LinkedIn</span>
+            <Mail className="h-4 w-4" />
+            <span>natalieindesign@gmail.com</span>
+          </a>
+          <a
+            href="tel:778-882-9545"
+            className="flex items-center gap-2 transition-colors hover:text-terminal-lime"
+          >
+            <Phone className="h-4 w-4" />
+            <span>778-882-9545</span>
           </a>
           <div className="flex items-center gap-2">
             <MapPin className="h-4 w-4" />

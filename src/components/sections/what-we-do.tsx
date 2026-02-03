@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Search, Brain, Bot, BarChart3, AlertCircle, CheckCircle2 } from "lucide-react";
+import { Globe, Brain, Bot, Check } from "lucide-react";
 
 const services = [
   {
     icon: Brain,
     title: "AI Strategy & Roadmap",
     description:
-      "I analyze your unique business processes to identify where AI integration will provide the highest impact. This phase delivers a pragmatic implementation roadmap and a proven strategic blueprint.",
+      "I analyze your unique business processes to identify where AI integration and automation will provide the highest impact. This phase delivers a pragmatic implementation roadmap and a proven strategic blueprint.",
   },
   {
     icon: Bot,
@@ -17,7 +17,7 @@ const services = [
       "I implement the automated systems required to scale your business operations. By replacing manual bottlenecks with scalable infrastructure, I enable your business to handle increased volume without expanding your headcount.",
   },
   {
-    icon: Search,
+    icon: Globe,
     title: "Websites & Apps",
     description:
       "I develop custom websites and applications tailored to your specific business requirements. To ensure long-term utility, every project includes personal support for training, system integration, and ongoing optimization.",
@@ -116,10 +116,10 @@ export function WhatWeDo() {
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <div className="reveal fade-up">
           <h2 className="text-center text-base font-semibold leading-7 text-terminal-lime">
-            Our Services
+            Services
           </h2>
           <h2 className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
-            What I Do
+            How I Help
           </h2>
         </div>
         <div className="mt-10 grid gap-4 sm:mt-16 sm:grid-cols-1 md:grid-cols-3">
@@ -149,90 +149,25 @@ export function WhatWeDo() {
 
                 {/* Illustration area */}
                 {index === 0 && (
-                  <div className="relative min-h-[220px] w-full grow mt-8">
-                    <div className="absolute inset-0 overflow-hidden rounded-2xl border border-terminal-border-teal/30 bg-gradient-to-br from-terminal-dark-teal/90 via-terminal-dark-teal/70 to-terminal-dark-teal/90 backdrop-blur-sm shadow-2xl shadow-terminal-lime/10">
-                      {/* Glow effect behind */}
-                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-terminal-lime/5 via-transparent to-terminal-lime/5 blur-xl"></div>
-                      
-                      {/* Header */}
-                      <div className="relative border-b border-terminal-border-teal/20 bg-terminal-dark-teal/30 px-4 py-2.5 rounded-t-2xl backdrop-blur-sm">
-                        <div className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full bg-terminal-lime/70 shadow-sm shadow-terminal-lime/50"></div>
-                          <div className="h-2 w-2 rounded-full bg-terminal-lime/50 shadow-sm shadow-terminal-lime/40"></div>
-                          <div className="h-2 w-2 rounded-full bg-terminal-lime/40 shadow-sm shadow-terminal-lime/30"></div>
-                          <div className="ml-2 flex-1 text-xs font-medium text-white/50">AI Strategy & Roadmap</div>
-                        </div>
-                      </div>
-                      
-                      {/* Content Area */}
-                      <div className="relative p-4 space-y-4">
-                        {/* Score Metric with Glow */}
-                        <div className="flex items-baseline gap-3">
-                          <div className="relative">
-                            <div className="text-3xl font-bold bg-gradient-to-r from-terminal-lime via-terminal-lime/90 to-terminal-lime/70 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(179,255,0,0.4)]">
-                              87
-                            </div>
-                            <div className="absolute inset-0 text-3xl font-bold bg-gradient-to-r from-terminal-lime via-terminal-lime/90 to-terminal-lime/70 bg-clip-text text-transparent blur-sm opacity-50">
-                              87
-                            </div>
+                  <div className="relative min-h-[180px] w-full grow mt-8">
+                    <div className="absolute top-6 right-6 bottom-6 left-6 overflow-hidden rounded-lg border-2 border-terminal-border-teal bg-terminal-dark-teal/60 outline outline-white/10 p-4">
+                      {/* Horizontal timeline - roadmap milestones */}
+                      <div className="flex items-center h-full min-h-[130px]">
+                        <div className="flex items-center flex-1 min-w-0">
+                          <div className="w-8 h-8 rounded-full border-2 border-terminal-lime/70 bg-terminal-lime/15 flex items-center justify-center shrink-0">
+                            <div className="w-2 h-2 rounded-full bg-terminal-lime/80" />
                           </div>
-                          <div className="px-2.5 py-1 rounded-lg bg-terminal-lime/10 border border-terminal-lime/30 shadow-lg shadow-terminal-lime/20 backdrop-blur-sm">
-                            <span className="text-xs font-semibold text-terminal-lime/90">+12%</span>
+                          <div className="flex-1 h-px mx-1 bg-gradient-to-r from-terminal-lime/50 to-terminal-border-teal/50" />
+                          <div className="w-7 h-7 rounded-full border-2 border-terminal-border-teal bg-terminal-dark-teal/80 flex items-center justify-center shrink-0">
+                            <div className="w-1.5 h-1.5 rounded-full bg-terminal-lime/50" />
                           </div>
-                        </div>
-                        
-                        {/* Bar Chart - Issues Found with Glow */}
-                        <div className="space-y-2">
-                          <div className="text-xs text-white/50 font-medium">Issues Found</div>
-                          <div className="flex items-end gap-2 h-14">
-                            <div className="relative flex-1 rounded-t-lg bg-gradient-to-t from-terminal-lime/70 via-terminal-lime/50 to-terminal-lime/30" style={{ height: '55%', boxShadow: '0 -4px 12px rgba(179, 255, 0, 0.3)' }}></div>
-                            <div className="relative flex-1 rounded-t-lg bg-gradient-to-t from-terminal-lime/75 via-terminal-lime/55 to-terminal-lime/35" style={{ height: '80%', boxShadow: '0 -4px 12px rgba(179, 255, 0, 0.35)' }}></div>
-                            <div className="relative flex-1 rounded-t-lg bg-gradient-to-t from-terminal-lime/65 via-terminal-lime/45 to-terminal-lime/25" style={{ height: '40%', boxShadow: '0 -4px 12px rgba(179, 255, 0, 0.25)' }}></div>
-                            <div className="relative flex-1 rounded-t-lg bg-gradient-to-t from-terminal-lime/70 via-terminal-lime/50 to-terminal-lime/30" style={{ height: '65%', boxShadow: '0 -4px 12px rgba(179, 255, 0, 0.3)' }}></div>
-                            <div className="relative flex-1 rounded-t-lg bg-gradient-to-t from-terminal-lime/60 via-terminal-lime/40 to-terminal-lime/20" style={{ height: '50%', boxShadow: '0 -4px 12px rgba(179, 255, 0, 0.25)' }}></div>
+                          <div className="flex-1 h-px mx-1 bg-gradient-to-r from-terminal-border-teal/50 to-terminal-border-teal/50" />
+                          <div className="w-7 h-7 rounded-full border-2 border-terminal-border-teal bg-terminal-dark-teal/80 flex items-center justify-center shrink-0">
+                            <div className="w-1.5 h-1.5 rounded-full bg-terminal-lime/50" />
                           </div>
-                        </div>
-                        
-                        {/* Priority Items List */}
-                        <div className="space-y-2.5 pt-1">
-                          <div className="flex items-center gap-2.5">
-                            <AlertCircle className="h-3.5 w-3.5 text-terminal-lime/70 drop-shadow-[0_0_4px_rgba(179,255,0,0.5)]" />
-                            <div className="flex-1 h-1 bg-gradient-to-r from-terminal-lime/30 to-terminal-lime/10 rounded-full"></div>
-                          </div>
-                          <div className="flex items-center gap-2.5">
-                            <CheckCircle2 className="h-3.5 w-3.5 text-terminal-lime/60 drop-shadow-[0_0_4px_rgba(179,255,0,0.4)]" />
-                            <div className="h-1 bg-gradient-to-r from-terminal-lime/25 to-terminal-lime/5 rounded-full" style={{ width: '75%' }}></div>
-                          </div>
-                          <div className="flex items-center gap-2.5">
-                            <AlertCircle className="h-3.5 w-3.5 text-terminal-lime/50 drop-shadow-[0_0_4px_rgba(179,255,0,0.3)]" />
-                            <div className="h-1 bg-gradient-to-r from-terminal-lime/20 to-terminal-lime/5 rounded-full" style={{ width: '60%' }}></div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Connected Icons at Bottom - UX & SEO Elements with Glow */}
-                      <div className="relative bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-5 px-4">
-                        {/* Circuit line background with glow */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <svg className="w-full h-10 opacity-30" viewBox="0 0 140 24" fill="none">
-                            <path d="M15 12 L125 12" stroke="currentColor" strokeWidth="1.5" className="text-terminal-lime drop-shadow-[0_0_4px_rgba(179,255,0,0.6)]" strokeLinecap="round" />
-                          </svg>
-                        </div>
-                        {/* Icons */}
-                        <div className="relative">
-                          <div className="h-9 w-9 rounded-xl border border-terminal-lime/50 bg-terminal-dark-teal/70 backdrop-blur-sm flex items-center justify-center shadow-lg shadow-terminal-lime/20">
-                            <Search className="h-4.5 w-4.5 text-terminal-lime/60 drop-shadow-[0_0_4px_rgba(179,255,0,0.4)]" />
-                          </div>
-                        </div>
-                        <div className="relative">
-                          <div className="h-9 w-9 rounded-xl border border-terminal-lime/50 bg-terminal-dark-teal/70 backdrop-blur-sm flex items-center justify-center shadow-lg shadow-terminal-lime/20">
-                            <BarChart3 className="h-4.5 w-4.5 text-terminal-lime/60 drop-shadow-[0_0_4px_rgba(179,255,0,0.4)]" />
-                          </div>
-                        </div>
-                        <div className="relative">
-                          <div className="h-9 w-9 rounded-xl border-2 border-terminal-lime/60 bg-terminal-lime/15 backdrop-blur-sm flex items-center justify-center shadow-xl shadow-terminal-lime/30">
-                            <CheckCircle2 className="h-4.5 w-4.5 text-terminal-lime/70 drop-shadow-[0_0_6px_rgba(179,255,0,0.6)]" />
-                            <div className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-terminal-lime/70 border-2 border-terminal-dark-teal shadow-lg shadow-terminal-lime/50"></div>
+                          <div className="flex-1 h-px mx-1 bg-gradient-to-r from-terminal-border-teal/50 to-terminal-lime/50" />
+                          <div className="w-8 h-8 rounded-full border-2 border-terminal-lime/70 bg-terminal-lime/15 flex items-center justify-center shrink-0">
+                            <Check className="w-4 h-4 text-terminal-lime/80" strokeWidth={2.5} />
                           </div>
                         </div>
                       </div>
@@ -240,11 +175,6 @@ export function WhatWeDo() {
                   </div>
                 )}
                 {index === 1 && (
-                  <div className="flex flex-1 items-center justify-center px-8 pb-6 sm:px-10 sm:pb-8 mt-8">
-                    <Brain className="h-20 w-20 text-terminal-lime/40" />
-                  </div>
-                )}
-                {index === 2 && (
                   <div className="relative min-h-[180px] w-full grow mt-8">
                     <div className="absolute top-6 right-6 bottom-6 left-6 overflow-hidden rounded-lg border-2 border-terminal-border-teal bg-terminal-dark-teal/60 outline outline-white/10">
                       <div className="flex bg-terminal-dark-teal/80 outline outline-white/5">
@@ -258,6 +188,41 @@ export function WhatWeDo() {
                       <div className="px-6 pt-6 pb-8">
                         <div className="flex items-center justify-center">
                           <Bot className="h-16 w-16 text-terminal-lime/40" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {index === 2 && (
+                  <div className="relative min-h-[180px] w-full grow mt-8">
+                    <div className="absolute top-6 right-6 bottom-6 left-6 overflow-hidden rounded-lg border-2 border-terminal-border-teal bg-terminal-dark-teal/60 outline outline-white/10">
+                      {/* Browser / app window */}
+                      <div className="flex flex-col h-full min-h-[150px] bg-terminal-dark-teal/80">
+                        <div className="flex items-center gap-1 px-3 py-2 border-b border-terminal-border-teal/50 bg-terminal-dark-teal/90">
+                          <div className="flex gap-1.5">
+                            <div className="w-2 h-2 rounded-full bg-terminal-lime/50" />
+                            <div className="w-2 h-2 rounded-full bg-terminal-border-teal/40" />
+                            <div className="w-2 h-2 rounded-full bg-terminal-border-teal/40" />
+                          </div>
+                          <div className="flex-1 mx-3 h-2 rounded bg-terminal-border-teal/30" />
+                          <Globe className="w-4 h-4 text-terminal-lime/50" />
+                        </div>
+                        <div className="flex-1 flex p-3 gap-3">
+                          {/* Sidebar */}
+                          <div className="w-12 rounded border border-terminal-border-teal/40 bg-terminal-dark-teal/60 flex flex-col items-center py-2 gap-1.5">
+                            <div className="w-2 h-2 rounded-sm bg-terminal-lime/40" />
+                            <div className="w-2 h-2 rounded-sm bg-terminal-border-teal/30" />
+                            <div className="w-2 h-2 rounded-sm bg-terminal-border-teal/30" />
+                            <div className="w-2 h-2 rounded-sm bg-terminal-border-teal/30" />
+                          </div>
+                          {/* Main content - page layout */}
+                          <div className="flex-1 flex flex-col gap-2 rounded border border-terminal-border-teal/40 bg-terminal-dark-teal/60 p-3">
+                            <div className="h-2 rounded bg-terminal-lime/30 w-3/4" />
+                            <div className="flex gap-2 flex-1">
+                              <div className="flex-1 rounded bg-terminal-lime/15" />
+                              <div className="w-1/4 rounded bg-terminal-lime/10" />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>

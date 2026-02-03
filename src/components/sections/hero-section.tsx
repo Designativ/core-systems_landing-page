@@ -13,8 +13,8 @@ export function HeroSection() {
   const spot4Ref = useRef<HTMLDivElement>(null);
 
   const services = [
-    "Automation",
     "AI Strategy & Roadmap",
+    "Automation",
     "Websites & Apps",
   ];
 
@@ -112,7 +112,7 @@ export function HeroSection() {
                   }
                 }}
               >
-                Talk With Our Team
+                Let's Talk
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

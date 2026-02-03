@@ -127,7 +127,7 @@ export default function HomePage() {
         name: "What happens on the free discovery call?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "I discuss your current situation, goals, and challenges. I'll ask about your website performance, team capabilities, and what you've already tried. You'll leave with a clear understanding of whether I'm a fit and what next steps might look like. No sales pressure.",
+          text: "We discuss your current situation, goals, and challenges. I will ask about your infrastructure to determine the alignment between my expertise and your specific needs. This ensures our collaboration is positioned for high-impact results. Upon confirming a fit, we will define the next steps for your project.",
         },
       },
       {

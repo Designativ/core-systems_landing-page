@@ -15,7 +15,7 @@ const problems = [
     icon: RefreshCw,
     title: "My team wastes hours on the same tasks every week",
     description:
-      "Custom automation built for your exact workflow - give your team back 10+ hours per week - time savings + productivity gains.",
+      "Custom automation built for your exact workflow - give your team back hours per week - time savings + productivity gains.",
   },
   {
     icon: DollarSign,
@@ -39,13 +39,13 @@ const problems = [
     icon: TrendingDown,
     title: "Our growth has stalled because our manual processes can't handle more volume",
     description:
-      "Operational infrastructure that scales with you. I replace manual bottlenecks with automated systems that allow you to increase volume 5x without scaling your headcount.",
+      "Operational infrastructure that scales with you. I replace manual bottlenecks with automated systems that allow you to increase volume without scaling your headcount.",
   },
   {
     icon: Brain,
     title: "I need an AI strategy but don't know where to start",
     description:
-      "Get a clear, prioritized roadmap showing what to automate, in what order, and the expected ROI.",
+      "Get a clear, prioritized roadmap showing what to automate, in what order.",
   },
 ];
 
@@ -129,7 +129,7 @@ export function CoreProblems() {
           {/* Header */}
           <div className="mx-auto mb-20 max-w-3xl text-center reveal fade-up">
             <p className="text-center text-base font-semibold leading-7 text-terminal-text-secondary mb-2">
-              How I Help
+              opportunities
             </p>
             <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
               Core Problems I Solve

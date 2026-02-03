@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Linkedin, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/shared/logo";
@@ -57,15 +57,6 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden items-center gap-3 md:flex">
-            <a
-              href="https://www.linkedin.com/in/nataliia-ivanova-profile/"
-              target="_self"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center rounded-lg p-2 text-gray-600 transition-colors hover:bg-white/50 hover:text-gray-900"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="h-5 w-5" />
-            </a>
             <Button
               asChild
               className="h-9 rounded-lg bg-terminal-dark-teal-alt px-5 text-sm font-semibold text-terminal-lime shadow-sm transition-all hover:bg-terminal-dark-teal hover:shadow-md"
@@ -109,16 +100,6 @@ export function Header() {
             </a>
           ))}
           <div className="mt-4 flex items-center gap-3 border-t border-gray-200/50 pt-4">
-            <a
-              href="https://www.linkedin.com/in/nataliia-ivanova-profile/"
-              target="_self"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center rounded-lg p-2 text-gray-600 transition-colors hover:bg-white/50 hover:text-gray-900"
-              onClick={() => setIsMenuOpen(false)}
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="h-5 w-5" />
-            </a>
             <Button
               asChild
               className="flex-1 h-10 rounded-lg bg-terminal-dark-teal-alt text-sm font-semibold text-terminal-lime shadow-sm transition-all hover:bg-terminal-dark-teal hover:shadow-md"

@@ -1,10 +1,9 @@
-import { Users, FileText, DollarSign } from "lucide-react";
+import { Users, FileText } from "lucide-react";
 import { ContactForm } from "@/components/shared/contact-form";
 
 const trustIndicators = [
   { text: "Expert consultation (free 30-min)", icon: Users },
   { text: "Personalized action plan", icon: FileText },
-  { text: "Upfront pricing", icon: DollarSign },
 ];
 
 export function FinalCTA() {

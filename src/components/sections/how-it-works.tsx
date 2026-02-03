@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search, FileText, BarChart3, Target, Rocket } from "lucide-react";
+import { Search, BarChart3, Rocket } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
 
 const steps = [
@@ -10,35 +10,21 @@ const steps = [
     icon: Search,
     title: "Discovery",
     description:
-      "I listen first, prescribe second. I start with a conversation about your business challenges, goals, and where you want to go. This helps me understand if I'm the right fit and which solutions will deliver the most value.",
+      "I conduct free 30-minute assessment of your business goals to determine if my expertise aligns with your specific challenges.\n\nThe Outcome: You receive a definitive answer on project feasibility and whether I am the right partner for your build. This ensures we move forward only if I can deliver high-value results.",
   },
   {
     number: "2",
-    icon: FileText,
-    title: "Proposal",
+    icon: BarChart3,
+    title: "Strategy & Roadmap",
     description:
-      "No guesswork, just clarity. You receive a tailored proposal outlining the scope, timeline, deliverables, and investment—no surprises, just clarity on what to expect and how I'll work with you.",
+      "I facilitate a paid deep-dive consultation to gather needed data and analyze your current processes and technical setup.\n\nThe Outcome: You receive the concrete blueprint for your project.",
   },
   {
     number: "3",
-    icon: BarChart3,
-    title: "Analysis",
-    description:
-      "Deep work, zero interruptions. I roll up my sleeves and get to work—analyzing your current state, identifying opportunities, and developing solutions tailored to your specific needs. You'll have access to a live project dashboard where you can track progress anytime.",
-  },
-  {
-    number: "4",
-    icon: Target,
-    title: "Strategy",
-    description:
-      "Actionable insights, not generic advice. You receive a comprehensive report with findings, prioritized recommendations, and key metrics—everything you need to make informed decisions.",
-  },
-  {
-    number: "5",
     icon: Rocket,
-    title: "Execution",
+    title: "Execution & Scale",
     description:
-      "From plan to performance. I create your implementation roadmap, build and deploy solutions, train your team, provide ongoing optimization and support, and serve as your long-term strategic partner.",
+      "I create scaling automation for your operations.\n\nThe Outcome: You gain a system capable of handling increased volume.",
   },
 ];
 
@@ -110,7 +96,7 @@ export function HowItWorks() {
                     {steps[activeTab].title}
                   </h3>
                 </div>
-                <p className="text-base leading-relaxed text-terminal-text-primary">
+                <p className="text-base leading-relaxed text-terminal-text-primary whitespace-pre-line">
                   {steps[activeTab].description}
                 </p>
               </div>

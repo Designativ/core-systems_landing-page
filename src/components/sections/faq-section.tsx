@@ -8,27 +8,27 @@ const faqs = [
   {
     question: "What happens on the free discovery call?",
     answer:
-      "I discuss your current situation, goals, and challenges. I'll ask about your website performance, team capabilities, and what you've already tried. You'll leave with a clear understanding of whether I'm a fit and what next steps might look like. No sales pressure.",
+      "We discuss your current situation, goals, and challenges. I will ask about your infrastructure to determine the alignment between my expertise and your specific needs. This ensures our collaboration is positioned for high-impact results. Upon confirming a fit, we will define the next steps for your project.",
   },
   {
     question: "How quickly can I get started?",
     answer:
-      "After our free discovery call, I typically deliver a custom proposal within 1-3 business days. Deep-dive audits usually take 1-2 weeks, and I can begin implementation immediately after that if you choose to move forward.",
+      "After our free discovery call, I typically deliver a custom proposal within 1-3 business days. Deep-dive audits usually take 1-2 weeks (depends on the project), and I can begin implementation immediately after that if you choose to move forward.",
   },
   {
     question: "Is there a minimum commitment?",
     answer:
-      "Just the initial project scope I agree on. Many clients start with an audit to validate the relationship and potential before committing to larger initiatives.",
+      "Just the initial project scope we define together. Most engagements begin with a pilot project to validate technical feasibility and ensure a secure foundation for your business. This approach allows us to test and confirm results on a smaller scale before moving to broader scaling.",
   },
   {
     question: "Can you just do the strategy, or do I need implementation too?",
     answer:
-      "Both options work. Many clients start with strategy and audit, then choose whether to implement themselves, use their existing team, or partner with us for execution. I'm flexible based on your capabilities and preferences.",
+      "Both options work. Many clients start with strategy & roadmap, then choose whether to implement themselves, use their existing team, or partner with me for execution. I'm flexible based on your capabilities and preferences.",
   },
   {
     question: "Do you build custom AI solutions or use existing tools?",
     answer:
-      "Both. I leverage proven platforms when appropriate (reducing cost and risk) and build custom solutions when your needs require it. Our recommendations are always based on what will deliver ROI fastest, not what's most technically impressive.",
+      "I leverage your existing tools and proven platforms to ensure your current processes remain stable. I only integrate new, secure, and efficient technologies when they are strictly necessary to achieve your specific goals. My priority is to enhance your infrastructure without disrupting the foundation of what already works.",
   },
   // {
   //   question: "What kind of ROI should I expect?",
@@ -55,19 +55,19 @@ export function FAQSection() {
   };
 
   return (
-    <section id="faq" className="py-16 md:py-20 reveal fade-up">
+    <section id="faq" className="bg-terminal-light-gray py-16 md:py-20 reveal fade-up">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl">
           {/* Header */}
           <div className="mb-16 text-center reveal fade-up">
               <p className="text-center text-base font-semibold leading-7 text-terminal-text-secondary mb-2">
-                FAQs
+                PROJECT CLARITY
               </p>
               <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
                 FAQs
               </h2>
             <p className="text-xl leading-relaxed text-terminal-text-primary">
-              Common questions about working with us
+              Common questions about working with me
             </p>
           </div>
 

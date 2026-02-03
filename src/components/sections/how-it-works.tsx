@@ -37,8 +37,8 @@ export function HowItWorks() {
         <div className="mx-auto max-w-4xl">
           {/* Header */}
           <Reveal animation="fade-up">
-            <div className="mx-auto mb-12 max-w-3xl text-center">
-              <p className="text-center text-base font-semibold leading-7 text-terminal-text-secondary mb-2">
+            <div className="mx-auto mb-12 max-w-3xl text-left md:text-center">
+              <p className="text-base font-semibold leading-7 text-terminal-text-secondary mb-2">
                 Process
               </p>
               <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
@@ -54,17 +54,17 @@ export function HowItWorks() {
           <div className="relative mb-10 w-full">
             <div
               role="tablist"
-              className="relative flex items-center justify-center gap-3 overflow-x-auto pb-2 w-full"
+              className="relative flex flex-col md:flex-row md:items-center md:justify-center gap-3 md:overflow-x-auto pb-2 w-full"
             >
               {steps.map((step, index) => {
                 const isActive = activeTab === index;
                 return (
-                  <div key={index} className="relative z-10">
+                  <div key={index} className="relative z-10 w-full md:w-auto">
                     <button
                       role="tab"
                       aria-selected={isActive}
                       onClick={() => setActiveTab(index)}
-                      className={`flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
+                      className={`flex w-full md:w-auto items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
                         isActive
                           ? "bg-terminal-lime text-black hover:bg-terminal-lime-hover scale-105 shadow-lg shadow-terminal-lime/30"
                           : "bg-white border-2 border-gray-200 text-terminal-text-tertiary hover:border-gray-300 hover:text-terminal-text-secondary hover:bg-gray-50"

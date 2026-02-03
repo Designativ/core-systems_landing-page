@@ -114,11 +114,11 @@ export function WhatWeDo() {
       </div>
 
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <div className="reveal fade-up">
-          <h2 className="text-center text-base font-semibold leading-7 text-terminal-lime">
+        <div className="reveal fade-up text-left md:text-center">
+          <h2 className="text-base font-semibold leading-7 text-terminal-lime">
             Services
           </h2>
-          <h2 className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
+          <h2 className="mt-2 max-w-lg md:mx-auto text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
             How I Help
           </h2>
         </div>

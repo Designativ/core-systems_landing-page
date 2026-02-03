@@ -59,8 +59,8 @@ export function FAQSection() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl">
           {/* Header */}
-          <div className="mb-16 text-center reveal fade-up">
-              <p className="text-center text-base font-semibold leading-7 text-terminal-text-secondary mb-2">
+          <div className="mb-16 text-left md:text-center reveal fade-up">
+              <p className="text-base font-semibold leading-7 text-terminal-text-secondary mb-2">
                 Clarity
               </p>
               <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">

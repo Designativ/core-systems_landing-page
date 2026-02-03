@@ -127,8 +127,8 @@ export function CoreProblems() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-7xl">
           {/* Header */}
-          <div className="mx-auto mb-20 max-w-3xl text-center reveal fade-up">
-            <p className="text-center text-base font-semibold leading-7 text-terminal-text-secondary mb-2">
+          <div className="mx-auto mb-20 max-w-3xl text-left md:text-center reveal fade-up">
+            <p className="text-base font-semibold leading-7 text-terminal-text-secondary mb-2">
               Opportunities
             </p>
             <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
@@ -140,8 +140,8 @@ export function CoreProblems() {
             </p>
           </div>
 
-          {/* Grid */}
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Mobile slider / Desktop grid */}
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-4 px-4 pb-2 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:overflow-visible sm:snap-none sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {problems.map((problem, index) => {
               const Icon = problem.icon;
               const delayClass = `delay-${Math.min(Math.floor(index / 2) + 1, 6)}`;
@@ -149,7 +149,7 @@ export function CoreProblems() {
               return (
                 <div
                   key={index}
-                  className={`group relative rounded-lg border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-terminal-lime/30 hover:shadow-md reveal fade-up ${delayClass} animated-border ${directionClass}`}
+                  className={`group relative flex-shrink-0 w-[85vw] min-w-[280px] sm:flex-shrink sm:min-w-0 sm:w-auto snap-center rounded-lg border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-terminal-lime/30 hover:shadow-md reveal fade-up ${delayClass} animated-border ${directionClass}`}
                 >
                   {/* Icon */}
                   <div className={`relative mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-terminal-dark-teal transition-all duration-500 group-hover:bg-terminal-dark-teal z-10 ${

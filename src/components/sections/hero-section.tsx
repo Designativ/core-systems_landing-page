@@ -112,7 +112,7 @@ export function HeroSection() {
                   }
                 }}
               >
-                Let's Talk
+                LET'S TALK
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

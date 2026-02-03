@@ -41,22 +41,26 @@ export function Header() {
             <Logo />
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden items-center space-x-1 md:flex">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="group relative flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-white/50 hover:text-gray-900 cursor-pointer"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Contact info + CTA Button */}
+          {/* Desktop Navigation + Contact info + CTA */}
           <div className="hidden items-center gap-4 md:flex">
+            {/* Nav links */}
+            <nav className="flex items-center space-x-1">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="group relative flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-white/50 hover:text-gray-900 cursor-pointer"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+            
+            {/* Divider */}
+            <div className="h-6 w-px bg-gray-300" />
+            
+            {/* Contact info */}
             <a
               href="mailto:natalieindesign@gmail.com"
               className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-white/50 hover:text-gray-900"

@@ -134,20 +134,16 @@ export function Header() {
                 778-882-9545
               </a>
             </div>
-            <Button
-              asChild
-              className="flex-1 h-10 rounded-lg bg-terminal-dark-teal-alt text-sm font-semibold text-terminal-lime shadow-sm transition-all hover:bg-terminal-dark-teal hover:shadow-md"
+            <a
+              href="#contact"
+              onClick={(e) => {
+                handleNavClick(e, "#contact");
+                setIsMenuOpen(false);
+              }}
+              className="rounded-lg px-4 py-3 text-sm font-semibold text-terminal-dark-teal-alt transition-colors hover:bg-white/50 hover:text-terminal-dark-teal cursor-pointer"
             >
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  handleNavClick(e, "#contact");
-                  setIsMenuOpen(false);
-                }}
-              >
-                CONTACT
-              </a>
-            </Button>
+              CONTACT
+            </a>
           </div>
         </nav>
       </div>

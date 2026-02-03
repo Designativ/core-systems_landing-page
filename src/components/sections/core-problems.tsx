@@ -129,7 +129,7 @@ export function CoreProblems() {
           {/* Header */}
           <div className="mx-auto mb-20 max-w-3xl text-center reveal fade-up">
             <p className="text-center text-base font-semibold leading-7 text-terminal-text-secondary mb-2">
-              opportunities
+              Opportunities
             </p>
             <h2 className="mb-3 text-4xl font-bold tracking-tight text-terminal-text-primary sm:text-5xl md:text-6xl">
               Core Problems I Solve

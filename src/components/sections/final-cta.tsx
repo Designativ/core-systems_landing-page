@@ -29,7 +29,7 @@ export function FinalCTA() {
             {/* Left Column - Content */}
             <div className="flex flex-col justify-start reveal fade-up">
               <p className="text-base font-semibold leading-7 text-terminal-lime mb-2">
-                Contact Us
+                Contact
               </p>
               <h2 className="mb-3 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
                 Ready to Transform Your Operations?

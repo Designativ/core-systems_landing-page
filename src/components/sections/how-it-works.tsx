@@ -97,7 +97,20 @@ export function HowItWorks() {
                   </h3>
                 </div>
                 <p className="text-base leading-relaxed text-terminal-text-primary whitespace-pre-line">
-                  {steps[activeTab].description}
+                  {(() => {
+                    const desc = steps[activeTab].description;
+                    const parts = desc.split("The Outcome:");
+                    if (parts.length === 2) {
+                      return (
+                        <>
+                          {parts[0]}
+                          <strong>The Outcome:</strong>
+                          {parts[1]}
+                        </>
+                      );
+                    }
+                    return desc;
+                  })()}
                 </p>
               </div>
             </div>
